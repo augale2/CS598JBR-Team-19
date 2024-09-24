@@ -35,9 +35,15 @@ def prompt_model(dataset, model_name = "deepseek-ai/deepseek-coder-6.7b-base", q
 
     results = []
     for case in dataset:
-        prompt = case['prompt']
+        prompt = case['prompt'] # this is the instruction that can be found in our dataset under the prompt key
         # TODO: prompt the model and get the response
-        
+
+        # Added by Daniel 
+        inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
+        outputs = model.generate(inputs["input_ids"], max_length=256)
+        response = tokenizer.decode(outputs[0], skip_special_tokens=True)
+        ######################################
+
         print(f"Task_ID {case['task_id']}:\nPrompt:\n{prompt}\nResponse:\n{response}")
         results.append(dict(task_id=case["task_id"], completion=response))
     return results
