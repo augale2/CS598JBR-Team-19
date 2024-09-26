@@ -1,6 +1,6 @@
 NetIDs ['augale2', 'dfeller2', 'kvibho2', 'sunhale2'] with seed 69841794489092767809710484565965079173
-Downloading readme:   0%|          | 0.00/6.52k [00:00<?, ?B/s]Downloading readme: 100%|██████████| 6.52k/6.52k [00:00<00:00, 27.9MB/s]
-Downloading data:   0%|          | 0.00/83.9k [00:00<?, ?B/s]Downloading data: 100%|██████████| 83.9k/83.9k [00:00<00:00, 232kB/s]Downloading data: 100%|██████████| 83.9k/83.9k [00:00<00:00, 232kB/s]
-Generating test split:   0%|          | 0/164 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 164/164 [00:00<00:00, 5740.49 examples/s]
+Downloading readme:   0%|          | 0.00/6.52k [00:00<?, ?B/s]Downloading readme: 100%|██████████| 6.52k/6.52k [00:00<00:00, 29.0MB/s]
+Downloading data:   0%|          | 0.00/83.9k [00:00<?, ?B/s]Downloading data: 100%|██████████| 83.9k/83.9k [00:00<00:00, 327kB/s]Downloading data: 100%|██████████| 83.9k/83.9k [00:00<00:00, 326kB/s]
+Generating test split:   0%|          | 0/164 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 164/164 [00:00<00:00, 5511.35 examples/s]
 Entire Dataset saved to humaneval.jsonl
 Selected 20 problems saved to selected_humaneval_69841794489092767809710484565965079173.jsonl
