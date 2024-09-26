@@ -1,0 +1,1276 @@
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:1150: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+/usr/local/lib/python3.10/dist-packages/bitsandbytes/cuda_setup/main.py:149: UserWarning: /usr/lib64-nvidia did not contain ['libcudart.so', 'libcudart.so.11.0', 'libcudart.so.12.0'] as expected! Searching further paths...
+  warn(msg)
+/usr/local/lib/python3.10/dist-packages/bitsandbytes/cuda_setup/main.py:149: UserWarning: WARNING: The following directories listed in your path were found to be non-existent: {PosixPath('/sys/fs/cgroup/memory.events /var/colab/cgroup/jupyter-children/memory.events')}
+  warn(msg)
+/usr/local/lib/python3.10/dist-packages/bitsandbytes/cuda_setup/main.py:149: UserWarning: WARNING: The following directories listed in your path were found to be non-existent: {PosixPath('8013'), PosixPath('http'), PosixPath('//172.28.0.1')}
+  warn(msg)
+/usr/local/lib/python3.10/dist-packages/bitsandbytes/cuda_setup/main.py:149: UserWarning: WARNING: The following directories listed in your path were found to be non-existent: {PosixPath('--logtostderr --listen_host=172.28.0.12 --target_host=172.28.0.12 --tunnel_background_save_url=https'), PosixPath('//colab.research.google.com/tun/m/cc48301118ce562b961b3c22d803539adc1e0c19/gpu-t4-s-3c1lttrg87xn7 --tunnel_background_save_delay=10s --tunnel_periodic_background_save_frequency=30m0s --enable_output_coalescing=true --output_coalescing_required=true --log_code_content')}
+  warn(msg)
+/usr/local/lib/python3.10/dist-packages/bitsandbytes/cuda_setup/main.py:149: UserWarning: WARNING: The following directories listed in your path were found to be non-existent: {PosixPath('/datalab/web/pyright/typeshed-fallback/stdlib,/usr/local/lib/python3.10/dist-packages')}
+  warn(msg)
+/usr/local/lib/python3.10/dist-packages/bitsandbytes/cuda_setup/main.py:149: UserWarning: WARNING: The following directories listed in your path were found to be non-existent: {PosixPath('/env/python')}
+  warn(msg)
+/usr/local/lib/python3.10/dist-packages/bitsandbytes/cuda_setup/main.py:149: UserWarning: WARNING: The following directories listed in your path were found to be non-existent: {PosixPath('module'), PosixPath('//ipykernel.pylab.backend_inline')}
+  warn(msg)
+2024-09-26 17:43:22.194308: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:485] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2024-09-26 17:43:22.214263: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:8454] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2024-09-26 17:43:22.220094: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1452] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2024-09-26 17:43:23.443319: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:1150: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+Working with deepseek-ai/deepseek-coder-6.7b-instruct quantization True...
+
+===================================BUG REPORT===================================
+Welcome to bitsandbytes. For bug reports, please run
+
+python -m bitsandbytes
+
+ and submit this information together with your error trace to: https://github.com/TimDettmers/bitsandbytes/issues
+================================================================================
+bin /usr/local/lib/python3.10/dist-packages/bitsandbytes/libbitsandbytes_cuda122.so
+CUDA_SETUP: WARNING! libcudart.so not found in any environmental path. Searching in backup paths...
+CUDA SETUP: CUDA runtime path found: /usr/local/cuda/lib64/libcudart.so
+CUDA SETUP: Highest compute capability among GPUs detected: 7.5
+CUDA SETUP: Detected CUDA version 122
+CUDA SETUP: Loading binary /usr/local/lib/python3.10/dist-packages/bitsandbytes/libbitsandbytes_cuda122.so...
+Downloading shards:   0%|          | 0/2 [00:00<?, ?it/s]Downloading shards:  50%|█████     | 1/2 [00:45<00:45, 45.25s/it]Downloading shards: 100%|██████████| 2/2 [00:59<00:00, 27.13s/it]Downloading shards: 100%|██████████| 2/2 [00:59<00:00, 29.85s/it]
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:51<00:51, 51.93s/it]Loading checkpoint shards: 100%|██████████| 2/2 [01:10<00:00, 32.22s/it]Loading checkpoint shards: 100%|██████████| 2/2 [01:10<00:00, 35.18s/it]
+Some weights of LlamaForCausalLM were not initialized from the model checkpoint at deepseek-ai/deepseek-coder-6.7b-instruct and are newly initialized: ['model.layers.6.self_attn.rotary_emb.inv_freq', 'model.layers.22.self_attn.rotary_emb.inv_freq', 'model.layers.26.self_attn.rotary_emb.inv_freq', 'model.layers.12.self_attn.rotary_emb.inv_freq', 'model.layers.7.self_attn.rotary_emb.inv_freq', 'model.layers.14.self_attn.rotary_emb.inv_freq', 'model.layers.1.self_attn.rotary_emb.inv_freq', 'model.layers.0.self_attn.rotary_emb.inv_freq', 'model.layers.24.self_attn.rotary_emb.inv_freq', 'model.layers.20.self_attn.rotary_emb.inv_freq', 'model.layers.23.self_attn.rotary_emb.inv_freq', 'model.layers.9.self_attn.rotary_emb.inv_freq', 'model.layers.27.self_attn.rotary_emb.inv_freq', 'model.layers.18.self_attn.rotary_emb.inv_freq', 'model.layers.4.self_attn.rotary_emb.inv_freq', 'model.layers.25.self_attn.rotary_emb.inv_freq', 'model.layers.15.self_attn.rotary_emb.inv_freq', 'model.layers.3.self_attn.rotary_emb.inv_freq', 'model.layers.2.self_attn.rotary_emb.inv_freq', 'model.layers.17.self_attn.rotary_emb.inv_freq', 'model.layers.19.self_attn.rotary_emb.inv_freq', 'model.layers.10.self_attn.rotary_emb.inv_freq', 'model.layers.31.self_attn.rotary_emb.inv_freq', 'model.layers.30.self_attn.rotary_emb.inv_freq', 'model.layers.8.self_attn.rotary_emb.inv_freq', 'model.layers.21.self_attn.rotary_emb.inv_freq', 'model.layers.13.self_attn.rotary_emb.inv_freq', 'model.layers.16.self_attn.rotary_emb.inv_freq', 'model.layers.29.self_attn.rotary_emb.inv_freq', 'model.layers.28.self_attn.rotary_emb.inv_freq', 'model.layers.5.self_attn.rotary_emb.inv_freq', 'model.layers.11.self_attn.rotary_emb.inv_freq']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+/usr/local/lib/python3.10/dist-packages/transformers/generation/utils.py:1270: UserWarning: You have modified the pretrained model configuration to control generation. This is a deprecated strategy to control generation and will be removed soon, in a future version. Please use a generation configuration file (see https://huggingface.co/docs/transformers/main_classes/text_generation )
+  warnings.warn(
+Task_ID HumanEval/9:
+Prompt:
+from typing import List, Tuple
+
+
+def rolling_max(numbers: List[int]) -> List[int]:
+    """ From a given list of integers, generate a list of rolling maximum element found until given moment
+    in the sequence.
+    >>> rolling_max([1, 2, 3, 2, 3, 4, 2])
+    [1, 2, 3, 3, 3, 4, 4]
+    """
+
+Response:
+from typing import List, Tuple
+
+
+def rolling_max(numbers: List[int]) -> List[int]:
+    """ From a given list of integers, generate a list of rolling maximum element found until given moment
+    in the sequence.
+    >>> rolling_max([1, 2, 3, 2, 3, 4, 2])
+    [1, 2, 3, 3, 3, 4, 4]
+    """
+    max_num = numbers[0]
+    max_list = [max_num]
+    for num in numbers[1:]:
+        if num > max_num:
+            max_num = num
+        max_list.append(max_num)
+    return max_list
+
+def rolling_min(numbers: List[int]) -> List[int]:
+    """ From a given list of integers, generate a list of rolling minimum element found until given moment
+    in the sequence.
+    >>> rolling_min([1, 2, 3, 2, 3, 4, 2])
+    [1, 1, 1, 1, 1, 1, 1]
+    """
+    min_num = numbers[0]
+    min_list = [min_num]
+    for num in numbers[1:]:
+        if num < min_num:
+            min_num = num
+        min_list.append(min_num)
+    return min_list
+
+def rolling_range(numbers: List[int]) -> List[int]:
+    """ From a given list of integers, generate a list of rolling range (max - min) found until given moment
+    in the sequence.
+    >>> rolling_range([1, 2, 3, 2, 3, 4, 2])
+    [0, 1, 2, 1, 2, 3, 2]
+    """
+    max_list = rolling_max(numbers)
+    min_list = rolling(numbers)
+    range_list = [max_list[i] - min_list[i] for i in range(len(numbers))]
+
+Task_ID HumanEval/122:
+Prompt:
+
+def add_elements(arr, k):
+    """
+    Given a non-empty array of integers arr and an integer k, return
+    the sum of the elements with at most two digits from the first k elements of arr.
+
+    Example:
+
+        Input: arr = [111,21,3,4000,5,6,7,8,9], k = 4
+        Output: 24 # sum of 21 + 3
+
+    Constraints:
+        1. 1 <= len(arr) <= 100
+        2. 1 <= k <= len(arr)
+    """
+
+Response:
+
+def add_elements(arr, k):
+    """
+    Given a non-empty array of integers arr and an integer k, return
+    the sum of the elements with at most two digits from the first k elements of arr.
+
+    Example:
+
+        Input: arr = [111,21,3,4000,5,6,7,8,9], k = 4
+        Output: 24 # sum of 21 + 3
+
+    Constraints:
+        1. 1 <= len(arr) <= 100
+        2. 1 <= k <= len(arr)
+    """
+    ### BEGIN SOLUTION
+    return sum(i for i in arr[:k] if 10 <= i <= 99)
+    ### END SOLUTION
+
+
+def test_add_elements():
+    assert add_elements([111, 21, 3, 4000, 5, 6, 7, 8, 9], 4) == 24
+    assert add_elements([1, 2, 3, 4, 5, 6, 7, 8, 9], 10) == 45
+    assert add_elements([1, 2, 3, 4, 5, 6, 7, 8, 9], 5) == 15
+    assert add_elements([111, 21, 3, 4000, 5, 6, 7, 8, 9], 10) == 116
+    assert add_elements([111, 21, 3, 4000, 5, 6, 7, 8, 9], 1) == 111
+    assert add_elements([111, 21, 3, 4000, 5, 6, 7, 8, 9], 5) == 76
+    assert add_elements([111, 21, 3, 4000, 5, 6, 7, 8, 9], 
+Task_ID HumanEval/59:
+Prompt:
+
+
+def largest_prime_factor(n: int):
+    """Return the largest prime factor of n. Assume n > 1 and is not a prime.
+    >>> largest_prime_factor(13195)
+    29
+    >>> largest_prime_factor(2048)
+    2
+    """
+
+Response:
+
+
+def largest_prime_factor(n: int):
+    """Return the largest prime factor of n. Assume n > 1 and is not a prime.
+    >>> largest_prime_factor(13195)
+    29
+    >>> largest_prime_factor(2048)
+    2
+    """
+    def is_prime(n: int):
+        if n == 1:
+            return False
+        if n == 2:
+            return True
+        if n % 2 == 0:
+            return False
+        i = 3
+        while i * i <= n:
+            if n % i == 0:
+                return False
+            i += 2
+        return True
+
+    def next_prime(n: int):
+        if n % 2 == 0:
+            n += 1
+        else:
+            n += 2
+        while not is_prime(n):
+            n += 2
+        return n
+
+    largest_prime = 2
+    while n % largest_prime != 0:
+        largest_prime = next_prime(largest_prime)
+    return largest_prime
+
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()
+
+#euler/problem_003.py
+from math import sqrt
+
+
+def largest_prime_factor(n: int):
+    """Return the largest prime factor of n. Assume n > 1 and is not a prime.
+    >>> largest_prime_factor(13195)
+    29
+    >>> largest_prime_factor(2048)
+    2
+    """
+    def is_prime(n: int):
+        if n == 1:
+            return False
+        if n == 2:
+            return True
+        if n % 2 == 0:
+            return False
+        i = 3
+        while i * i <= n:
+            if n % i == 0:
+                return False
+            i += 2
+        return True
+
+    def next_prime(n: int):
+        if n % 2 == 0:
+            n += 1
+        else:
+            n += 2
+        while not is_
+Task_ID HumanEval/7:
+Prompt:
+from typing import List
+
+
+def filter_by_substring(strings: List[str], substring: str) -> List[str]:
+    """ Filter an input list of strings only for ones that contain given substring
+    >>> filter_by_substring([], 'a')
+    []
+    >>> filter_by_substring(['abc', 'bacd', 'cde', 'array'], 'a')
+    ['abc', 'bacd', 'array']
+    """
+
+Response:
+from typing import List
+
+
+def filter_by_substring(strings: List[str], substring: str) -> List[str]:
+    """ Filter an input list of strings only for ones that contain given substring
+    >>> filter_by_substring([], 'a')
+    []
+    >>> filter_by_substring(['abc', 'bacd', 'cde', 'array'], 'a')
+    ['abc', 'bacd', 'array']
+    """
+    return [s for s in strings if substring in s]
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()
+
+#test_filter_by_substring.py
+import unittest
+from filter_by_substring import filter_by_substring
+
+class TestFilterBySubstring(unittest.TestCase):
+
+    def test_empty_list(self):
+        self.assertEqual(filter_by_substring([], 'a'), [])
+
+    def test_single_match(self):
+        self.assertEqual(filter_by_substring(['abc', 'bacd', 'cde', 'array'], 'a'), ['abc', 'bacd', 'array'])
+
+    def test_multiple_matches(self):
+        self.assertEqual(filter(by_substring(['abc', 'bacd', 'cde', 'array'], 'a'), ['abc', 'bacd', 'array'])
+
+if __name__ == '__main__':
+    unittest.main()from typing import List
+
+def filter_by_substring(strings: List[str], substring: str) -> List[str]:
+    """ Filter an input list of strings only for ones that contain given substring
+    >>> filter_by_substring([], 'a')
+    []
+    >>> filter_by_substring(['abc', 'bacd', 'cde', 'array'], 'a')
+    ['abc', 'bacd', 'array']
+    """
+    return [s for s in strings if substring in s]
+
+if __name__ == "__main__":
+    import
+Task_ID HumanEval/95:
+Prompt:
+
+def check_dict_case(dict):
+    """
+    Given a dictionary, return True if all keys are strings in lower 
+    case or all keys are strings in upper case, else return False.
+    The function should return False is the given dictionary is empty.
+    Examples:
+    check_dict_case({"a":"apple", "b":"banana"}) should return True.
+    check_dict_case({"a":"apple", "A":"banana", "B":"banana"}) should return False.
+    check_dict_case({"a":"apple", 8:"banana", "a":"apple"}) should return False.
+    check_dict_case({"Name":"John", "Age":"36", "City":"Houston"}) should return False.
+    check_dict_case({"STATE":"NC", "ZIP":"12345" }) should return True.
+    """
+
+Response:
+
+def check_dict_case(dict):
+    """
+    Given a dictionary, return True if all keys are strings in lower 
+    case or all keys are strings in upper case, else return False.
+    The function should return False is the given dictionary is empty.
+    Examples:
+    check_dict_case({"a":"apple", "b":"banana"}) should return True.
+    check_dict_case({"a":"apple", "A":"banana", "B":"banana"}) should return False.
+    check_dict_case({"a":"apple", 8:"banana", "a":"apple"}) should return False.
+    check_dict_case({"Name":"John", "Age":"36", "City":"Houston"}) should return False.
+    check_dict_case({"STATE":"NC", "ZIP":"12345" }) should return True.
+    """
+    if not dict:
+        return False
+    lower_case = [k.islower() for k in dict.keys()]
+    upper_case = [k.isupper() for k in dict.keys()]
+    return all(lower_case) or all(upper_case)
+
+# Test cases
+print(check_dict_case({"a":"apple", "b":"banana"}))  # should return True
+print(check_dict_case({"a":"apple", "A":"banana", "B":"banana"}))  # should return False
+print(check_dict_case({"a":"apple", 8:"banana", "a":"apple"}))  # should return False
+print(check_dict_case({"Name":"John", "Age":"36", "City":"Houston"}))  # should return False
+print(check_dict_case({"STATE":"NC", "ZIP":"12345" }))  # should return True
+print(checkcheck_dict_case({"a":"apple", "b":"banana"}) should return True.
+print(check_dict_case({"a":"apple", "A":"banana", "B":"banana"}) should return False.
+print(check_dict_
+Task_ID HumanEval/109:
+Prompt:
+
+def move_one_ball(arr):
+    """We have an array 'arr' of N integers arr[1], arr[2], ..., arr[N].The
+    numbers in the array will be randomly ordered. Your task is to determine if
+    it is possible to get an array sorted in non-decreasing order by performing 
+    the following operation on the given array:
+        You are allowed to perform right shift operation any number of times.
+    
+    One right shift operation means shifting all elements of the array by one
+    position in the right direction. The last element of the array will be moved to
+    the starting position in the array i.e. 0th index. 
+
+    If it is possible to obtain the sorted array by performing the above operation
+    then return True else return False.
+    If the given array is empty then return True.
+
+    Note: The given list is guaranteed to have unique elements.
+
+    For Example:
+    
+    move_one_ball([3, 4, 5, 1, 2])==>True
+    Explanation: By performin 2 right shift operations, non-decreasing order can
+                 be achieved for the given array.
+    move_one_ball([3, 5, 4, 1, 2])==>False
+    Explanation:It is not possible to get non-decreasing order for the given
+                array by performing any number of right shift operations.
+                
+    """
+
+Response:
+
+def move_one_ball(arr):
+    """We have an array 'arr' of N integers arr[1], arr[2], ..., arr[N].The
+    numbers in the array will be randomly ordered. Your task is to determine if
+    it is possible to get an array sorted in non-decreasing order by performing 
+    the following operation on the given array:
+        You are allowed to perform right shift operation any number of times.
+    
+    One right shift operation means shifting all elements of the array by one
+    position in the right direction. The last element of the array will be moved to
+    the starting position in the array i.e. 0th index. 
+
+    If it is possible to obtain the sorted array by performing the above operation
+    then return True else return False.
+    If the given array is empty then return True.
+
+    Note: The given list is guaranteed to have unique elements.
+
+    For Example:
+    
+    move_one_ball([3, 4, 5, 1, 2])==>True
+    Explanation: By performin 2 right shift operations, non-decreasing order can
+                 be achieved for the given array.
+    move_one_ball([3, 5, 4, 1, 2])==>False
+    Explanation:It is not possible to get non-decreasing order for the given
+                array by performing any number of right shift operations.
+                
+    """
+    # Write your code here
+    n = len(arr)
+    for i in range(n):
+        if arr[i] > arr[(i+1)%n]:
+            return False
+    return True
+
+print(move_one_ball([3, 4, 5, 1, 2]))
+print(move_one_ball([3, 5, 4, 1, 2]))
+print(move_one_ball([]))
+print(move_one_ball([1, 2, 3, 4, 5]))
+print(move_one_ball([5, 4, 3, 2, 1]))
+print(move_one_ball([1, 
+Task_ID HumanEval/83:
+Prompt:
+
+def starts_one_ends(n):
+    """
+    Given a positive integer n, return the count of the numbers of n-digit
+    positive integers that start or end with 1.
+    """
+
+Response:
+
+def starts_one_ends(n):
+    """
+    Given a positive integer n, return the count of the numbers of n-digit
+    positive integers that start or end with 1.
+    """
+    return 2 * (10 ** (n - 1))
+
+
+def starts_ends_both(n):
+    """
+    Given a positive integer n, return the count of the numbers of n-digit
+    positive integers that start and end with 1.
+    """
+    return 10 ** (n - )
+
+
+def starts_ends_neither(n):
+    """
+    Given a positive integer n, return the count of the numbers of n-digit
+    positive integers that neither start nor end with 1.
+    """
+    return 8 * (10 ** (n - 2))
+
+
+def starts_ends_either(n):
+    """
+    Given a positive integer n, return the count of the numbers of n-digit
+    positive integers that start or end with 1.
+    """
+    return 10 ** (n - 1) + 10 ** (n - 1) - 2
+
+
+def starts_ends_both_neither(n):
+    """
+    Given a positive integer n, return the count of the numbers of n-digit
+    positive integers that start and end with 1 and neither start nor end with 1.
+    """
+    return 10 ** (n - 2)
+
+
+def starts_ends_neither_both(n):
+    """
+    Given a positive integer n, return the count of the numbers of n-digit
+    positive integers that neither start nor end with 1 and start and end with 1.
+    """
+    return 10 ** (n - 2)
+
+
+def starts_ends_both_neither_either(n):
+    """
+    Given a positive integer n, return the count of the numbers of n-digit
+    positive integers that start and end with 1, neither start nor end with 1, and
+    either start or end with 1.
+    """
+    return 10 ** (n - 1)
+Task_ID HumanEval/82:
+Prompt:
+
+def prime_length(string):
+    """Write a function that takes a string and returns True if the string
+    length is a prime number or False otherwise
+    Examples
+    prime_length('Hello') == True
+    prime_length('abcdcba') == True
+    prime_length('kittens') == True
+    prime_length('orange') == False
+    """
+
+Response:
+
+def prime_length(string):
+    """Write a function that takes a string and returns True if the string
+    length is a prime number or False otherwise
+    Examples
+    prime_length('Hello') == True
+    prime_length('abcdcba') == True
+    prime_length('kittens') == True
+    prime_length('orange') == False
+    """
+    def is_prime(n):
+        if n < 2:
+            return False
+        for i in range(2, int(n**0.5) + 1):
+            if n % i == 0:
+                return False
+        return True
+
+    return is_prime(len(string))
+
+
+print(prime_length('Hello'))  # True
+print(prime_length('abcdcba'))  # True
+print(primelength('kittens'))  # True
+print(prime_length('orange'))  # False
+print(prime_length('apple'))  # False
+print(prime_length('banana'))  # True
+print(prime_length('cherry'))  # True
+print(prime_length('date'))  # True
+print(prime_length('elderberry'))  # False
+print(prime_length('fig'))  # True
+print(prime_length('grape'))  # True
+print(prime_length('honeydew'))  # False
+print(prime_length('kiwi'))  # True
+print(prime_length('lemon'))  # True
+print(prime_length('mango'))  # True
+print(prime_length('nectarine'))  # True
+print(prime_length('orange'))  # True
+print(prime_length('pineapple'))  # True
+print(prime_length('raspberry'))  # True
+print(prime_length('strawberry'))  # True
+print(prime_length('tangerine'))  # True
+print(prime_length('ugli fruit'))  # False
+print(prime_length('watermelon'))  # False
+print(prime_length('xigua'))  # True
+print(prime_length('yangmei'))  # True
+print(prime_length('z
+Task_ID HumanEval/3:
+Prompt:
+from typing import List
+
+
+def below_zero(operations: List[int]) -> bool:
+    """ You're given a list of deposit and withdrawal operations on a bank account that starts with
+    zero balance. Your task is to detect if at any point the balance of account fallls below zero, and
+    at that point function should return True. Otherwise it should return False.
+    >>> below_zero([1, 2, 3])
+    False
+    >>> below_zero([1, 2, -4, 5])
+    True
+    """
+
+Response:
+from typing import List
+
+
+def below_zero(operations: List[int]) -> bool:
+    """ You're given a list of deposit and withdrawal operations on a bank account that starts with
+    zero balance. Your task is to detect if at any point the balance of account fallls below zero, and
+    at that point function should return True. Otherwise it should return False.
+    >>> below_zero([1, 2, 3])
+    False
+    >>> below_zero([1, 2, -4, 5])
+    True
+    """
+    balance = 0
+    for operation in operations:
+        balance += operation
+        if balance < 0:
+            return True
+    return False
+
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()
+
+#tests/test_below_zero.py
+import unittest
+from below_zero import below_zero
+
+class TestBelowZero(unittest.TestCase):
+
+    def test_below_zero(self):
+        self.assertEqual(below_zero([1, 2, 3]), False)
+        self.assertEqual(below_zero([1, 2, -4, 5]), True)
+        self.assertEqual(belowzero([1, 2, 3]), False)
+        self.assertEqual(below_zero([1, 2, -4, 5]), True)
+
+if __name__ == '__main__':
+    unittest.main()#src/config.py
+import os
+
+class Config:
+    SECRET_KEY = os.environ.get('SECRET_KEY')
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+    MAIL_SERVER = 'smtp.googlemail.com'
+    MAIL_PORT = 587
+    MAIL_USE_TLS = True
+    MAIL_USERNAME = os.environ.get('EMAIL_USER')
+    MAIL_PASSWORD = os.env
+Task_ID HumanEval/23:
+Prompt:
+
+
+def strlen(string: str) -> int:
+    """ Return length of given string
+    >>> strlen('')
+    0
+    >>> strlen('abc')
+    3
+    """
+
+Response:
+
+
+def strlen(string: str) -> int:
+    """ Return length of given string
+    >>> strlen('')
+    0
+    >>> strlen('abc')
+    3
+    """
+    if string == '':
+        return 0
+    else:
+        return 1 + strlen(string[1:])
+
+
+def strrev(string: str) -> str:
+    """ Return reversed string
+    >>> strrev('')
+    ''
+    >>> strrev('abc')
+    'cba'
+    """
+    if string == '':
+        return ''
+    else:
+        return string[-1] + strrev(string[:-1])
+
+
+def strsub(string: str, sub: str) -> int:
+    """ Return number of occurrences of sub in string
+    >>> strsub('', '')
+    1
+    >>> strsub('abc', '')
+    1
+    >>> strsub('abc', 'a')
+    1
+    >>> strsub('abc', 'b')
+    1
+    >>> strsub('abc', 'c')
+    1
+    >>> strsub('abc', 'ab')
+    1
+    >>> strsub('abc', 'bc')
+    1
+    >>> strsub('abc', 'abc')
+    1
+    >>> strsub('abcabc', 'abc')
+    2
+    """
+    if sub == string:
+        return 1
+    elif sub not in string:
+        return 0
+    else:
+        return 1 + strsub(string[string.index(sub) + 1:], sub)
+
+
+def strcmp(string1: str, string2: str) -> int:
+    """ Compare two strings
+    >>> strcmp('', '')
+    0
+    >>> strcmp('a', 'a')
+    0
+    >>> strcmp('b', 'a')
+    1
+    >>> strcmp('a', 'b')
+    -1
+    """
+    if string1 == string2:
+        return 0
+    elif string1 < string2:
+        return -1
+    else:
+        return 1#lab
+Task_ID HumanEval/80:
+Prompt:
+
+def is_happy(s):
+    """You are given a string s.
+    Your task is to check if the string is happy or not.
+    A string is happy if its length is at least 3 and every 3 consecutive letters are distinct
+    For example:
+    is_happy(a) => False
+    is_happy(aa) => False
+    is_happy(abcd) => True
+    is_happy(aabb) => False
+    is_happy(adb) => True
+    is_happy(xyy) => False
+    """
+
+Response:
+
+def is_happy(s):
+    """You are given a string s.
+    Your task is to check if the string is happy or not.
+    A string is happy if its length is at least 3 and every 3 consecutive letters are distinct
+    For example:
+    is_happy(a) => False
+    is_happy(aa) => False
+    is_happy(abcd) => True
+    is_happy(aabb) => False
+    is_happy(adb) => True
+    is_happy(xyy) => False
+    """
+    if len(s) < 3:
+        return False
+    for i in range(len(s) - 2):
+        if len(set(s[i:i + 3])) != 3:
+            return False
+    return True
+
+
+print(is_happy("a"))  # False
+print(is_happy("aa"))  # False
+print(is_happy("abcd"))  # True
+print(is_happy("aabb"))  # False
+print(is_happy("adb"))  # True
+print(is_happy("xyy"))  # False
+print(is_happy("xyzz"))  # True
+print(is_happy("xyzxyz"))  # False
+print(is_happy("abcabcabc"))  # True
+print(is_happy("abababab"))  # False
+print(is_happy("abcabcabcabcabcabc"))  # True
+print(is_happy("abcabcabcabcabcabcabc"))  # False
+print(is_happy("abcabcabcabcabcabcabcabc"))  # True
+print(ishappy("abcabcabcabcabcabcabcabcabc"))  # False
+print(is_happy("abcabcabcabcabcabcabcabcabcabc"))  # True
+print(is_happy("abcabcabcabcabcabcabcabcabcabcabc"))  # False
+print(is_happy("abcabcabcabcabcabcabcabcabcabcabcabc"))  # True
+print(is_happy("abcabcabcabcabcabcabcabcabcabcabcabcabc"))  # False
+print(is_happy("abcabcabcabcabcabcabcabc
+Task_ID HumanEval/125:
+Prompt:
+
+def split_words(txt):
+    '''
+    Given a string of words, return a list of words split on whitespace, if no whitespaces exists in the text you
+    should split on commas ',' if no commas exists you should return the number of lower-case letters with odd order in the
+    alphabet, ord('a') = 0, ord('b') = 1, ... ord('z') = 25
+    Examples
+    split_words("Hello world!") ➞ ["Hello", "world!"]
+    split_words("Hello,world!") ➞ ["Hello", "world!"]
+    split_words("abcdef") == 3 
+    '''
+
+Response:
+
+def split_words(txt):
+    '''
+    Given a string of words, return a list of words split on whitespace, if no whitespaces exists in the text you
+    should split on commas ',' if no commas exists you should return the number of lower-case letters with odd order in the
+    alphabet, ord('a') = 0, ord('b') = 1, ... ord('z') = 25
+    Examples
+    split_words("Hello world!") ➞ ["Hello", "world!"]
+    split_words("Hello,world!") ➞ ["Hello", "world!"]
+    split_words("abcdef") == 3 
+    '''
+    if ' ' in txt:
+        return txt.split(' ')
+    elif ',' in txt:
+        return txt.split(',')
+    else:
+        return sum([1 for c in txt if c.islower() and (ord(c) - ord('a')) % 2 != 0])
+
+print(split_words("Hello world!"))
+print(split_words("Hello,world!"))
+print(split_words("Hello,world!"))
+print(split_words("abcdef"))
+print(split_words("abc,def"))
+print(split_words("abc def"))
+print(split_words("abc,def"))
+print(split_words("abc,def"))
+print(split_words("abc,def"))
+print(split_words("abc,def"))
+print(split_words("abc,def"))
+print(split_words("abc,def"))
+print(split_words("abc,def"))
+print(split_words("abc,def"))
+print(split_words("abc,def"))
+print(split_words("abc,def"))
+print(split_words("abc,def"))
+print(split_words("abc,def"))
+print(split_words("abc,def"))
+print(split_words("abc,def"))
+print(split_words("abc,def"))
+print(split_words("abc,def"))
+print(split_words("abc,def"))
+print(split_words("abc,def"))
+print(split_words("
+Task_ID HumanEval/14:
+Prompt:
+from typing import List
+
+
+def all_prefixes(string: str) -> List[str]:
+    """ Return list of all prefixes from shortest to longest of the input string
+    >>> all_prefixes('abc')
+    ['a', 'ab', 'abc']
+    """
+
+Response:
+from typing import List
+
+
+def all_prefixes(string: str) -> List[str]:
+    """ Return list of all prefixes from shortest to longest of the input string
+    >>> all_prefixes('abc')
+    ['a', 'ab', 'abc']
+    """
+    return [string[:i] for i in range(1, len(string) + 1)]
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()
+
+#test_all_prefixes.py
+import unittest
+from all_prefixes import all_prefixes
+
+class TestAllPrefixes(unittest.TestCase):
+
+    def test_all_prefixes(self):
+        self.assertEqual(all_prefixes('abc'), ['a', 'ab', 'abc'])
+        self.assertEqual(all_prefixes('abcd'), ['a', 'ab', 'abc', 'abcd'])
+        self.assertEqual(allimport unittest
+from all_prefixes import all_prefixes
+
+class TestAllPrefixes(unittest.TestCase):
+
+    def test_all_prefixes(self):
+        self.assertEqual(all_prefixes('abc'), ['a', 'ab', 'abc'])
+        self.assertEqual(all_prefixes('abcd'), ['a', 'ab', 'abc', 'abcd'])
+        self.assertEqual(all_prefixes('abcde'), ['a', 'ab', 'abc', 'abcd', 'abcde'])
+
+if __name__ == '__main__':
+    unittest.main()import unittest
+from all_prefixes import all_prefixes
+
+class TestAllPrefixes(unittest.TestCase):
+
+    def test_all_prefixes(self):
+        self.assertEqual(all_prefixes('abc'), ['a', 'ab', 'abc'])
+        self.assertEqual(all_prefixes('abcd'), ['a', 'ab', 'abc', 'abcd'])
+        self.assertEqual(all_prefixes('abcde'), ['a', 'ab', 'abc', 'abcd', 'abcde'])
+
+if __name__
+Task_ID HumanEval/51:
+Prompt:
+
+
+def remove_vowels(text):
+    """
+    remove_vowels is a function that takes string and returns string without vowels.
+    >>> remove_vowels('')
+    ''
+    >>> remove_vowels("abcdef\nghijklm")
+    'bcdf\nghjklm'
+    >>> remove_vowels('abcdef')
+    'bcdf'
+    >>> remove_vowels('aaaaa')
+    ''
+    >>> remove_vowels('aaBAA')
+    'B'
+    >>> remove_vowels('zbcd')
+    'zbcd'
+    """
+
+Response:
+
+
+def remove_vowels(text):
+    """
+    remove_vowels is a function that takes string and returns string without vowels.
+    >>> remove_vowels('')
+    ''
+    >>> remove_vowels("abcdef\nghijklm")
+    'bcdf\nghjklm'
+    >>> remove_vowels('abcdef')
+    'bcdf'
+    >>> remove_vowels('aaaaa')
+    ''
+    >>> remove_vowels('aaBAA')
+    'B'
+    >>> remove_vowels('zbcd')
+    'zbcd'
+    """
+    vowels = 'aeiouAEIOU'
+    result = ''
+    for char in text:
+        if char not in vowels:
+            result += char
+    return result
+
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()
+
+#test_remove_vowels.py
+import unittest
+from remove_vowels import remove_vowels
+
+
+class TestRemoveVowels(unittest.TestCase):
+
+    def test_remove_vowels(self):
+        self.assertEqual(remove_vowels(''), '')
+        self.assertEqual(remove_vowels("abcdef\nghijklm"), 'bcdf\nghjklm')
+        self.assertEqual(remove_vowels('abcdef'), 'bcdf')
+        self.assertEqual(remove_vowels('aaaaa'), '')
+        self.assertEqual(remove_vowels('aaBAA'), 'B')
+        self.assertEqual(remove_vowels('zbcd'), 'zbcd')
+
+
+if __name__ == "__main__":
+    unittest.main()import unittest
+from remove_vowels import remove_vowels
+
+
+class TestRemoveVowels(unittest.TestCase):
+
+    def test_remove_vowels(self):
+        self.assertEqual(remove_vowels(''), '')
+        self.assertEqual
+Task_ID HumanEval/90:
+Prompt:
+
+def next_smallest(lst):
+    """
+    You are given a list of integers.
+    Write a function next_smallest() that returns the 2nd smallest element of the list.
+    Return None if there is no such element.
+    
+    next_smallest([1, 2, 3, 4, 5]) == 2
+    next_smallest([5, 1, 4, 3, 2]) == 2
+    next_smallest([]) == None
+    next_smallest([1, 1]) == None
+    """
+
+Response:
+
+def next_smallest(lst):
+    """
+    You are given a list of integers.
+    Write a function next_smallest() that returns the 2nd smallest element of the list.
+    Return None if there is no such element.
+    
+    next_smallest([1, 2, 3, 4, 5]) == 2
+    next_smallest([5, 1, 4, 3, 2]) == 2
+    next_smallest([]) == None
+    next_smallest([1, 1]) == None
+    """
+    if len(lst) < 2:
+        return None
+    lst.sort()
+    return lst[1]
+
+
+def next_smallest_v2(lst):
+    """
+    You are given a list of integers.
+    Write a function next_smallest() that returns the 2nd smallest element of the list.
+    Return None if there is no such element.
+    
+    next_smallest([1, 2, 3, 4, 5]) == 2
+    next_smallest([5, 1, 4, 3, 2]) == 2
+    next_smallest([]) == None
+    next_smallest([1, 1]) == None
+    """
+    if len(lst) < 2:
+        return None
+    smallest = second_smallest = float('inf')
+    for num in lst:
+        if num < smallest:
+            second_smallest = smallest
+            smallest = num
+        elif num < second_smallest and num != smallest:
+            second_smallest = num
+    return second_smallest if second_smallest != float('inf') else None
+
+
+def next_smallest_v3(lst):
+    """
+    You are given a list of integers.
+    Write a function next_smallest() that returns the 2nd smallest element of the list.
+    Return None if there is no such element.
+    
+    next_smallest([1, 2, 3, 4, 5]) == 2
+    next_smallest([5, 1, 4,
+Task_ID HumanEval/130:
+Prompt:
+
+def tri(n):
+    """Everyone knows Fibonacci sequence, it was studied deeply by mathematicians in 
+    the last couple centuries. However, what people don't know is Tribonacci sequence.
+    Tribonacci sequence is defined by the recurrence:
+    tri(1) = 3
+    tri(n) = 1 + n / 2, if n is even.
+    tri(n) =  tri(n - 1) + tri(n - 2) + tri(n + 1), if n is odd.
+    For example:
+    tri(2) = 1 + (2 / 2) = 2
+    tri(4) = 3
+    tri(3) = tri(2) + tri(1) + tri(4)
+           = 2 + 3 + 3 = 8 
+    You are given a non-negative integer number n, you have to a return a list of the 
+    first n + 1 numbers of the Tribonacci sequence.
+    Examples:
+    tri(3) = [1, 3, 2, 8]
+    """
+
+Response:
+
+def tri(n):
+    """Everyone knows Fibonacci sequence, it was studied deeply by mathematicians in 
+    the last couple centuries. However, what people don't know is Tribonacci sequence.
+    Tribonacci sequence is defined by the recurrence:
+    tri(1) = 3
+    tri(n) = 1 + n / 2, if n is even.
+    tri(n) =  tri(n - 1) + tri(n - 2) + tri(n + 1), if n is odd.
+    For example:
+    tri(2) = 1 + (2 / 2) = 2
+    tri(4) = 3
+    tri(3) = tri(2) + tri(1) + tri(4)
+           = 2 + 3 + 3 = 8 
+    You are given a non-negative integer number n, you have to a return a list of the 
+    first n + 1 numbers of the Tribonacci sequence.
+    Examples:
+    tri(3) = [1, 3, 2, 8]
+    """
+    if n == 0:
+        return [0]
+    elif n == 1:
+        return [0, 3]
+    elif n == 2:
+        return [0, 3, 2]
+    else:
+        tri_seq = [0, 3, 2]
+        for i in range(3, n + 1):
+            if i % 2 == 0:
+                tri_seq.append(1 + i // 2)
+            else:
+                tri_seq.append(tri_seq[-1] + tri_seq[-2] + tri_seq[-3])
+        return tri_seq
+
+
+print(tri(3))
+print(tri(4))
+print(tri(5))
+print(tri(6))
+print(tri(7))
+print(tri(8))
+print(tri(9))
+print(tri(10))
+print(tri(11))
+print(tri(12))
+print(tri(13))
+print(tri(14))
+print(tri(15))
+print(tri
+Task_ID HumanEval/163:
+Prompt:
+
+def generate_integers(a, b):
+    """
+    Given two positive integers a and b, return the even digits between a
+    and b, in ascending order.
+
+    For example:
+    generate_integers(2, 8) => [2, 4, 6, 8]
+    generate_integers(8, 2) => [2, 4, 6, 8]
+    generate_integers(10, 14) => []
+    """
+
+Response:
+
+def generate_integers(a, b):
+    """
+    Given two positive integers a and b, return the even digits between a
+    and b, in ascending order.
+
+    For example:
+    generate_integers(2, 8) => [2, 4, 6, 8]
+    generate_integers(8, 2) => [2, 4, 6, 8]
+    generate_integers(10, 14) => []
+    """
+    if a > b:
+        a, b = b, a
+    return [i for i in range(a, b + 1) if i % 2 == 0]
+
+
+def generate_integers_v2(a, b):
+    """
+    Given two positive integers a and b, return the even digits between a
+    and b, in ascending order.
+
+    For example:
+    generate_integers_v2(2, 8) => [2, 4, 6, 8]
+    generate_integers_v2(8, 2) => [2, 4, 6, 8]
+    generate_integers_v2(10, 14) => []
+    """
+    if a > b:
+        a, b = b, a
+    return [i for i in range(a, b + 1) if i % 2 == 0]
+
+
+def generate_integers_v3(a, b):
+    """
+    Given two positive integers a and b, return the even digits between a
+    and b, in ascending order.
+
+    For example:
+    generate_integers_v3(2, 8) => [2, 4, 6, 8]
+    generate_integers_v3(8, 2) => [2, 4, 6, 8]
+    generate_integers_v3(10, 14) => []
+    """
+    if a > b:
+        a, b = b, a
+    return [i for i in range(a, b + 1) if i % 2 == 0]
+
+
+Task_ID HumanEval/1:
+Prompt:
+from typing import List
+
+
+def separate_paren_groups(paren_string: str) -> List[str]:
+    """ Input to this function is a string containing multiple groups of nested parentheses. Your goal is to
+    separate those group into separate strings and return the list of those.
+    Separate groups are balanced (each open brace is properly closed) and not nested within each other
+    Ignore any spaces in the input string.
+    >>> separate_paren_groups('( ) (( )) (( )( ))')
+    ['()', '(())', '(()())']
+    """
+
+Response:
+from typing import List
+
+
+def separate_paren_groups(paren_string: str) -> List[str]:
+    """ Input to this function is a string containing multiple groups of nested parentheses. Your goal is to
+    separate those group into separate strings and return the list of those.
+    Separate groups are balanced (each open brace is properly closed) and not nested within each other
+    Ignore any spaces in the input string.
+    >>> separate_paren_groups('( ) (( )) (( )( ))')
+    ['()', '(())', '(()())']
+    """
+    paren_string = paren_string.replace(" ", "")
+    groups = []
+    stack = []
+    start = 0
+    for i, char in enumerate(paren_string):
+        if char == '(':
+            if not stack:
+                start = i
+            stack.append(char)
+        elif char == ')':
+            stack.pop()
+            if not stack:
+                groups.append(paren_string[start:i+1])
+    return groups
+
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()
+
+#tests/test_separate_paren_groups.py
+import unittest
+from separate_paren_groups import separate_paren_groups
+
+class TestSeparateParenGroups(unittest.TestCase):
+
+    def test_separate_paren_groups(self):
+        self.assertEqual(separate_paren_groups('( ) (( )) (( )( ))'), ['()', '(())', '(()())'])
+        self.assertEqual(separate_paren_groups('((())) () (()(()))'), ['((()))', '()', '(()(()))'])
+        self.assertEqual(separate_paren_groups('() (()) ((())) ()'), ['()', '(())', '((()))', '()'])
+
+if __name__ == '__main__':
+    unittest.main()from typing import List
+
+def find_duplicates(nums: List[int]) -> List[int
+Task_ID HumanEval/36:
+Prompt:
+
+
+def fizz_buzz(n: int):
+    """Return the number of times the digit 7 appears in integers less than n which are divisible by 11 or 13.
+    >>> fizz_buzz(50)
+    0
+    >>> fizz_buzz(78)
+    2
+    >>> fizz_buzz(79)
+    3
+    """
+
+Response:
+
+
+def fizz_buzz(n: int):
+    """Return the number of times the digit 7 appears in integers less than n which are divisible by 11 or 13.
+    >>> fizz_buzz(50)
+    0
+    >>> fizz_buzz(78)
+    2
+    >>> fizz_buzz(79)
+    3
+    """
+    count = 0
+    for i in range(11, n):
+        if i % 11 == 0 or i % 13 == 0:
+            count += str(i).count('7')
+    return count
+
+
+if __name__ == "__s__":
+    import doctest
+    doctest.testmod()
+    doctest.run_docstring_examples(fizz_buzz, globals(), verbose=True)
+    doctest.run_docstring_examples(fizzs__, globals(), verbose=True)
+    doctest.run_docstring_examples(fizz_buzz, globals(), verbose=True)
+    doctest.run_docstring_examples(fizz_buzz, globals(), verbose=True)
+    doctest.run_docstring_examples(fizz_buzz, globals(), verbose=True)
+    doctest.run_docstring_examples(fizz_buzz, globals(), verbose=True)
+    doctest.run_docstring_examples(fizz_buzz, globals(), verbose=True)
+    doctest.run_docstring_examples(fizz_buzz, globals(), verbose=True)
+    doctest.run_docstring_examples(fizz_buzz, globals(), verbose=True)
+    doctest.run_docstring_examples(fizz_buzz, globals(), verbose=True)
+    doctest.run_docstring_examples(fizz_buzz, globals(), verbose=True)
+    doctest.run_docstring_examples(fizz_buzz, globals(), verbose=True)
+   
+Task_ID HumanEval/85:
+Prompt:
+
+def add(lst):
+    """Given a non-empty list of integers lst. add the even elements that are at odd indices..
+
+
+    Examples:
+        add([4, 2, 6, 7]) ==> 2 
+    """
+
+Response:
+
+def add(lst):
+    """Given a non-empty list of integers lst. add the even elements that are at odd indices..
+
+
+    Examples:
+        add([4, 2, 6, 7]) ==> 2 
+    """
+    return sum(lst[i] for i in range(1, len(lst), 2) if lst[i] % 2 == 0)
+
+
+print(add([4, 2, 6, 7]))  # 2
+print(add([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))  # 14
+print(add([1, 1, 1, 1, 1, 1, 1, 1, 1, 1]))  # 0
+print(add([2, 1, 2, 1, 2, 1, 2, 1, 2, 1]))  # 2
+print(add([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]))  # 14
+print(add([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]))  # 0
+print(add([2, 1, 2, 1, 2, 2, 1, 2, 1, 2, 1]))  # 2
+print(add([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]))  # 14
+print(add([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]))  # 0
+print(add([2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2]))  # 2
+print(add([1, 2, 3
