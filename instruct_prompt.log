@@ -4,9 +4,9 @@
   warn(msg)
 /usr/local/lib/python3.10/dist-packages/bitsandbytes/cuda_setup/main.py:149: UserWarning: WARNING: The following directories listed in your path were found to be non-existent: {PosixPath('/sys/fs/cgroup/memory.events /var/colab/cgroup/jupyter-children/memory.events')}
   warn(msg)
-/usr/local/lib/python3.10/dist-packages/bitsandbytes/cuda_setup/main.py:149: UserWarning: WARNING: The following directories listed in your path were found to be non-existent: {PosixPath('8013'), PosixPath('//172.28.0.1'), PosixPath('http')}
+/usr/local/lib/python3.10/dist-packages/bitsandbytes/cuda_setup/main.py:149: UserWarning: WARNING: The following directories listed in your path were found to be non-existent: {PosixPath('//172.28.0.1'), PosixPath('http'), PosixPath('8013')}
   warn(msg)
-/usr/local/lib/python3.10/dist-packages/bitsandbytes/cuda_setup/main.py:149: UserWarning: WARNING: The following directories listed in your path were found to be non-existent: {PosixPath('--logtostderr --listen_host=172.28.0.12 --target_host=172.28.0.12 --tunnel_background_save_url=https'), PosixPath('//colab.research.google.com/tun/m/cc48301118ce562b961b3c22d803539adc1e0c19/gpu-t4-s-2x4jma866j1gp --tunnel_background_save_delay=10s --tunnel_periodic_background_save_frequency=30m0s --enable_output_coalescing=true --output_coalescing_required=true --log_code_content')}
+/usr/local/lib/python3.10/dist-packages/bitsandbytes/cuda_setup/main.py:149: UserWarning: WARNING: The following directories listed in your path were found to be non-existent: {PosixPath('--logtostderr --listen_host=172.28.0.12 --target_host=172.28.0.12 --tunnel_background_save_url=https'), PosixPath('//colab.research.google.com/tun/m/cc48301118ce562b961b3c22d803539adc1e0c19/gpu-t4-s-2tsr7m48s8h2q --tunnel_background_save_delay=10s --tunnel_periodic_background_save_frequency=30m0s --enable_output_coalescing=true --output_coalescing_required=true --log_code_content')}
   warn(msg)
 /usr/local/lib/python3.10/dist-packages/bitsandbytes/cuda_setup/main.py:149: UserWarning: WARNING: The following directories listed in your path were found to be non-existent: {PosixPath('/datalab/web/pyright/typeshed-fallback/stdlib,/usr/local/lib/python3.10/dist-packages')}
   warn(msg)
@@ -14,10 +14,10 @@
   warn(msg)
 /usr/local/lib/python3.10/dist-packages/bitsandbytes/cuda_setup/main.py:149: UserWarning: WARNING: The following directories listed in your path were found to be non-existent: {PosixPath('//ipykernel.pylab.backend_inline'), PosixPath('module')}
   warn(msg)
-2024-09-26 19:29:25.239929: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:485] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
-2024-09-26 19:29:25.259123: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:8454] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
-2024-09-26 19:29:25.264895: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1452] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
-2024-09-26 19:29:26.541774: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2024-09-26 21:41:59.180421: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:485] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2024-09-26 21:41:59.199989: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:8454] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2024-09-26 21:41:59.206001: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1452] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2024-09-26 21:42:00.429451: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
 /usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:1150: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
   warnings.warn(
 Working with deepseek-ai/deepseek-coder-6.7b-instruct quantization True...
@@ -35,13 +35,12 @@ CUDA SETUP: CUDA runtime path found: /usr/local/cuda/lib64/libcudart.so
 CUDA SETUP: Highest compute capability among GPUs detected: 7.5
 CUDA SETUP: Detected CUDA version 122
 CUDA SETUP: Loading binary /usr/local/lib/python3.10/dist-packages/bitsandbytes/libbitsandbytes_cuda122.so...
-Downloading shards:   0%|          | 0/2 [00:00<?, ?it/s]Downloading shards:  50%|█████     | 1/2 [00:56<00:56, 56.64s/it]Downloading shards: 100%|██████████| 2/2 [01:16<00:00, 34.77s/it]Downloading shards: 100%|██████████| 2/2 [01:16<00:00, 38.05s/it]
-Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:50<00:50, 50.03s/it]Loading checkpoint shards: 100%|██████████| 2/2 [01:07<00:00, 30.72s/it]Loading checkpoint shards: 100%|██████████| 2/2 [01:07<00:00, 33.62s/it]
-Some weights of LlamaForCausalLM were not initialized from the model checkpoint at deepseek-ai/deepseek-coder-6.7b-instruct and are newly initialized: ['model.layers.24.self_attn.rotary_emb.inv_freq', 'model.layers.25.self_attn.rotary_emb.inv_freq', 'model.layers.12.self_attn.rotary_emb.inv_freq', 'model.layers.19.self_attn.rotary_emb.inv_freq', 'model.layers.18.self_attn.rotary_emb.inv_freq', 'model.layers.30.self_attn.rotary_emb.inv_freq', 'model.layers.22.self_attn.rotary_emb.inv_freq', 'model.layers.31.self_attn.rotary_emb.inv_freq', 'model.layers.27.self_attn.rotary_emb.inv_freq', 'model.layers.14.self_attn.rotary_emb.inv_freq', 'model.layers.13.self_attn.rotary_emb.inv_freq', 'model.layers.17.self_attn.rotary_emb.inv_freq', 'model.layers.23.self_attn.rotary_emb.inv_freq', 'model.layers.3.self_attn.rotary_emb.inv_freq', 'model.layers.0.self_attn.rotary_emb.inv_freq', 'model.layers.10.self_attn.rotary_emb.inv_freq', 'model.layers.2.self_attn.rotary_emb.inv_freq', 'model.layers.16.self_attn.rotary_emb.inv_freq', 'model.layers.9.self_attn.rotary_emb.inv_freq', 'model.layers.5.self_attn.rotary_emb.inv_freq', 'model.layers.8.self_attn.rotary_emb.inv_freq', 'model.layers.1.self_attn.rotary_emb.inv_freq', 'model.layers.29.self_attn.rotary_emb.inv_freq', 'model.layers.15.self_attn.rotary_emb.inv_freq', 'model.layers.21.self_attn.rotary_emb.inv_freq', 'model.layers.7.self_attn.rotary_emb.inv_freq', 'model.layers.26.self_attn.rotary_emb.inv_freq', 'model.layers.4.self_attn.rotary_emb.inv_freq', 'model.layers.28.self_attn.rotary_emb.inv_freq', 'model.layers.20.self_attn.rotary_emb.inv_freq', 'model.layers.6.self_attn.rotary_emb.inv_freq', 'model.layers.11.self_attn.rotary_emb.inv_freq']
+Downloading shards:   0%|          | 0/2 [00:00<?, ?it/s]Downloading shards:  50%|█████     | 1/2 [01:49<01:49, 109.09s/it]Downloading shards: 100%|██████████| 2/2 [02:58<00:00, 85.54s/it] Downloading shards: 100%|██████████| 2/2 [02:58<00:00, 89.08s/it]
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:49<00:49, 49.03s/it]Loading checkpoint shards: 100%|██████████| 2/2 [01:06<00:00, 30.45s/it]Loading checkpoint shards: 100%|██████████| 2/2 [01:06<00:00, 33.24s/it]
+Some weights of LlamaForCausalLM were not initialized from the model checkpoint at deepseek-ai/deepseek-coder-6.7b-instruct and are newly initialized: ['model.layers.17.self_attn.rotary_emb.inv_freq', 'model.layers.9.self_attn.rotary_emb.inv_freq', 'model.layers.22.self_attn.rotary_emb.inv_freq', 'model.layers.23.self_attn.rotary_emb.inv_freq', 'model.layers.28.self_attn.rotary_emb.inv_freq', 'model.layers.5.self_attn.rotary_emb.inv_freq', 'model.layers.3.self_attn.rotary_emb.inv_freq', 'model.layers.11.self_attn.rotary_emb.inv_freq', 'model.layers.1.self_attn.rotary_emb.inv_freq', 'model.layers.29.self_attn.rotary_emb.inv_freq', 'model.layers.14.self_attn.rotary_emb.inv_freq', 'model.layers.0.self_attn.rotary_emb.inv_freq', 'model.layers.27.self_attn.rotary_emb.inv_freq', 'model.layers.6.self_attn.rotary_emb.inv_freq', 'model.layers.26.self_attn.rotary_emb.inv_freq', 'model.layers.16.self_attn.rotary_emb.inv_freq', 'model.layers.2.self_attn.rotary_emb.inv_freq', 'model.layers.31.self_attn.rotary_emb.inv_freq', 'model.layers.10.self_attn.rotary_emb.inv_freq', 'model.layers.18.self_attn.rotary_emb.inv_freq', 'model.layers.25.self_attn.rotary_emb.inv_freq', 'model.layers.12.self_attn.rotary_emb.inv_freq', 'model.layers.7.self_attn.rotary_emb.inv_freq', 'model.layers.8.self_attn.rotary_emb.inv_freq', 'model.layers.4.self_attn.rotary_emb.inv_freq', 'model.layers.24.self_attn.rotary_emb.inv_freq', 'model.layers.13.self_attn.rotary_emb.inv_freq', 'model.layers.20.self_attn.rotary_emb.inv_freq', 'model.layers.21.self_attn.rotary_emb.inv_freq', 'model.layers.15.self_attn.rotary_emb.inv_freq', 'model.layers.19.self_attn.rotary_emb.inv_freq', 'model.layers.30.self_attn.rotary_emb.inv_freq']
 You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
 /usr/local/lib/python3.10/dist-packages/transformers/generation/utils.py:1270: UserWarning: You have modified the pretrained model configuration to control generation. This is a deprecated strategy to control generation and will be removed soon, in a future version. Please use a generation configuration file (see https://huggingface.co/docs/transformers/main_classes/text_generation )
   warnings.warn(
-Input length of input_ids is 335, but `max_length` is set to 256. This can lead to unexpected behavior. You should consider increasing `max_new_tokens`.
 Task_ID HumanEval/9:
 Prompt:
 from typing import List, Tuple
@@ -76,7 +75,29 @@ def rolling_min(numbers: List[int]) -> List[int]:
     """ From a given list of integers, generate a list of rolling minimum element found until given moment
     in the sequence.
     >>> rolling_min([1, 2, 3, 2, 3, 4, 2])
-    [1, 1,
+    [1, 1, 1, 1, 1, 1, 1]
+    """
+    min_num = numbers[0]
+    min_list = [min_num]
+    for num in numbers[1:]:
+        if num < min_num:
+            min_num = num
+        min_list.append(min_num)
+    return min_list
+
+def rolling_sum(numbers: List[int]) -> List[int]:
+    """ From a given list of integers, generate a list of rolling sum of elements found until given moment
+    in the sequence.
+    >>> rolling_sum([1, 2, 3, 2, 3, 4, 2])
+    [1, 3, 6, 8, 11, 15, 17]
+    """
+    sum_num = numbers[0]
+    sum_list = [sum_num]
+    for num in numbers[1:]:
+        sum_num += num
+        sum_list.append(sum_num)
+    return sum_list
+
 Task_ID HumanEval/122:
 Prompt:
 
@@ -118,7 +139,12 @@ def add_elements(arr, k):
 
 def test_add_elements():
     assert add_elements([111, 21, 3, 4000, 5, 6, 7, 8, 9], 4) == 24
-    assert add_elements([1, 2, 3
+    assert add_elements([1, 2, 3, 4, 5, 6, 7, 8, 9], 10) == 45
+    assert add_elements([1, 2, 3, 4, 5, 6, 7, 8, 9], 5) == 15
+    assert add_elements([111, 21, 3, 4000, 5, 6, 7, 8, 9], 10) == 116
+    assert add_elements([111, 21, 3, 4000, 5, 6, 7, 8, 9], 1) == 111
+    assert add_elements([111, 21, 3, 4000, 5, 6, 7, 8, 9], 5) == 76
+    assert add_elements([111, 21, 3, 4000, 5, 6, 7, 8, 9], 
 Task_ID HumanEval/59:
 Prompt:
 
@@ -170,7 +196,41 @@ def largest_prime_factor(n: int):
     return largest_prime
 
 
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()
 
+#euler/problem_003.py
+from math import sqrt
+
+
+def largest_prime_factor(n: int):
+    """Return the largest prime factor of n. Assume n > 1 and is not a prime.
+    >>> largest_prime_factor(13195)
+    29
+    >>> largest_prime_factor(2048)
+    2
+    """
+    def is_prime(n: int):
+        if n == 1:
+            return False
+        if n == 2:
+            return True
+        if n % 2 == 0:
+            return False
+        i = 3
+        while i * i <= n:
+            if n % i == 0:
+                return False
+            i += 2
+        return True
+
+    def next_prime(n: int):
+        if n % 2 == 0:
+            n += 1
+        else:
+            n += 2
+        while not is_
 Task_ID HumanEval/7:
 Prompt:
 from typing import List
@@ -206,7 +266,22 @@ if __name__ == '__main__':
 <p>This is a simple web page.</p>
 <p>It's written in HTML.</p>
 <p>It's a basic introduction to web development.</p>
-
+<p>It's a work in progress.</p>
+<p>It's a learning experience.</p>
+<p>It's a journey.</p>
+<p>It's a new chapter in my life.</p>
+<p>It's a new beginning.</p>
+<p>It's a new opportunity.</p>
+<p>It's a new challenge.</p>
+<p>It's a new adventure.</p>
+<p>It's a new journey.</p>
+<p>It's a new experience.</p>
+<p>It's a new perspective.</p>
+<p>It's a new understanding.</p>
+<p>It's a new knowledge.</p>
+<p>It's a new skill.</p>
+<p>It's a new tool.</p>
+<p>It's a new way of thinking.</p>
 Task_ID HumanEval/95:
 Prompt:
 
@@ -240,7 +315,18 @@ def check_dict_case(dict):
     if not dict:
         return False
     lower_case = [k.islower() for k in dict.keys()]
-    upper_case = [k.isupper() for k in dict
+    upper_case = [k.isupper() for k in dict.keys()]
+    return all(lower_case) or all(upper_case)
+
+# Test cases
+print(check_dict_case({"a":"apple", "b":"banana"}))  # should return True
+print(check_dict_case({"a":"apple", "A":"banana", "B":"banana"}))  # should return False
+print(check_dict_case({"a":"apple", 8:"banana", "a":"apple"}))  # should return False
+print(check_dict_case({"Name":"John", "Age":"36", "City":"Houston"}))  # should return False
+print(check_dict_case({"STATE":"NC", "ZIP":"12345" }))  # should return True
+print(checkcheck_dict_case({"a":"apple", "b":"banana"}) should return True.
+print(check_dict_case({"a":"apple", "A":"banana", "B":"banana"}) should return False.
+print(check_dict_
 Task_ID HumanEval/109:
 Prompt:
 
@@ -301,7 +387,21 @@ def move_one_ball(arr):
                 array by performing any number of right shift operations.
                 
     """
-   
+    # Write your code here
+    if len(arr) == 0:
+        return True
+    else:
+        for i in range(len(arr)):
+            if arr[i:] + arr[:i] == sorted(arr):
+                return True
+        return False
+
+
+print(move_one_ball([3, 4, 5, 1, 2]))  # True
+print(move_one_ball([3, 5, 4, 1, 2]))  # False
+print(move_one_ball([]))  # True
+print(move_one_ball([1, 2, 3, 4, 5]))  # True
+print(move_one_ball([
 Task_ID HumanEval/83:
 Prompt:
 
@@ -340,7 +440,27 @@ def starts_ends_both_ends_both(n):
 def starts_ends_both_ends_both_ends_both(n):
     """
     Given a positive integer n, return the count of the numbers of n-digit
-    positive integers that start and end
+    positive integers that start and end with 1 and both start and end with 1 and
+    both start and end with 1 and both start and end with 1.
+    """
+    return 2 * (10 ** (n - ))
+
+
+def starts_ends_both_ends_both_ends_both_ends_both(n):
+    """
+    Given a positive integer n, return the count of the numbers of n-digit
+    positive integers that start and end with 1 and both start and end with 1 and
+    both start and end with 1 and both start and end with 1 and both start and end
+    with 1 and both start and end with 1.
+    """
+    return 2 * (10 ** (n - ))
+
+
+def starts_ends_both_ends_both_ends_both_ends_both_ends_both(n):
+    """
+    Given a positive integer n, return the count of the numbers of n-digit
+    positive integers that start and end with 1 and both start and end with 1 and
+    both start
 Task_ID HumanEval/82:
 Prompt:
 
@@ -383,7 +503,23 @@ print(prime_length('orange'))  # False
 print(prime_length('apple'))  # False
 print(prime_length(''))  # True
 print(prime_length('a'))  # True
-print(prime_length('ab'))  #
+print(prime_length('ab'))  # True
+print(prime_length('abc'))  # False
+print(prime_length('abcd'))  # False
+print(prime_length('abcde'))  # True
+print(prime_length('abcdef'))  # True
+print(prime_length('abcdefg'))  # False
+print(prime_length('abcdefgh'))  # False
+print(prime_length('abcdefghi')) True
+print(prime_length('abcdefghij')) True
+print(prime_length('abcdefghijk'))  # False
+print(prime_length('abcdefghijkl'))  # False
+print(prime_length('abcdefghijklm'))  # True
+print(prime_length('abcdefghijklmn'))  # True
+print(prime_length('abcdefghijklmno'))  # False
+print(prime_length('abcdefghijklmnop'))  # False
+print(prime_length('abcdefghijklmnopq'))  # True
+print(prime_length('abcdefghijklmn
 Task_ID HumanEval/3:
 Prompt:
 from typing import List
@@ -431,7 +567,24 @@ from below_zero import below_zero
 class TestBelowZero(unittest.TestCase):
 
     def test_below_zero(self):
-        self.assertEqual(below_zero([1, 2, 3
+        self.assertEqual(below_zero([1, 2, 3]), False)
+        self.assertEqual(below_zero([1, 2, -4, 5]), True)
+        self.assertEqual(belowzero([1, 2, 3]), False)
+        self.assertEqual(below_zero([1, 2, -4, 5]), True)
+
+if __name__ == '__main__':
+    unittest.main()#src/config.py
+import os
+
+class Config:
+    SECRET_KEY = os.environ.get('SECRET_KEY')
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+    MAIL_SERVER = 'smtp.googlemail.com'
+    MAIL_PORT = 587
+    MAIL_USE_TLS = True
+    MAIL_USERNAME = os.environ.get('EMAIL_USER')
+    MAIL_PASSWORD = os.env
 Task_ID HumanEval/23:
 Prompt:
 
@@ -485,6 +638,40 @@ def strsub(string: str, sub: str) -> int:
     1
     >>> strsub('abc', 'c')
     1
+    >>> strsub('abc', 'ab')
+    1
+    >>> strsub('abc', 'bc')
+    1
+    >>> strsub('abc', 'abc')
+    1
+    >>> strsub('abcabc', 'abc')
+    2
+    """
+    if sub == string:
+        return 1
+    elif sub not in string:
+        return 0
+    else:
+        return 1 + strsub(string[string.index(sub) + 1:], sub)
+
+
+def strcmp(string1: str, string2: str) -> int:
+    """ Compare two strings
+    >>> strcmp('', '')
+    0
+    >>> strcmp('a', 'a')
+    0
+    >>> strcmp('b', 'a')
+    1
+    >>> strcmp('a', 'b')
+    -1
+    """
+    if string1 == string2:
+        return 0
+    elif string1 < string2:
+        return -1
+    else:
+        return 1#lab
 Task_ID HumanEval/80:
 Prompt:
 
@@ -528,7 +715,13 @@ print(is_happy("aa"))  # False
 print(is_happy("abcd"))  # True
 print(is_happy("aabb"))  # False
 print(is_happy("adb"))  # True
-print(is_
+print(is_happy("xyy"))  # False
+print(is_happy("xyzz"))  # True
+print(is_happy("xyzxyz"))  # False
+print(is_happy("abcabcabc"))  # True
+print(is_happy("abababab"))  # False
+print(is_happy("abcabcabcabcabcabc"))  # True
+print(is_happy("abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabc
 Task_ID HumanEval/125:
 Prompt:
 
@@ -562,9 +755,31 @@ def split_words(txt):
     else:
         return sum([1 for c in txt if c.islower() and (ord(c) - ord('a')) % 2 != 0])
 
-print(split_words("Hello world"))
-print(split_words("Hello,world"))
-print(split_words
+print(split_words("Hello world!"))
+print(split_words("Hello,world!"))
+print(split_words("Hello,world!"))
+print(split_words("abcdef"))
+print(split_words("abc,def"))
+print(split_words("abc def"))
+print(split_words("abc,def"))
+print(split_words("abc,def"))
+print(split_words("abc,def"))
+print(split_words("abc,def"))
+print(split_words("abc,def"))
+print(split_words("abc,def"))
+print(split_words("abc,def"))
+print(split_words("abc,def"))
+print(split_words("abc,def"))
+print(split_words("abc,def"))
+print(split_words("abc,def"))
+print(split_words("abc,def"))
+print(split_words("abc,def"))
+print(split_words("abc,def"))
+print(split_words("abc,def"))
+print(split_words("abc,def"))
+print(split_words("abc,def"))
+print(split_words("abc,def"))
+print(split_words("
 Task_ID HumanEval/14:
 Prompt:
 from typing import List
@@ -598,7 +813,13 @@ if __name__ == "__main__":
     print(all_prefixes('a'))  # ['a']
     print(all_prefixes('ab'))  # ['a', 'ab']
     print(all_prefixes('abc'))  # ['a', 'ab', 'abc']
-    print(all_prefixes('
+    print(all_prefixes('abcd'))  # ['a', 'ab', 'abc', 'abcd']
+    print(all_prefixes('abcde'))  # ['a', 'ab', 'abc', 'abcd', 'abcde']
+    print(all_prefixes('abcdef'))  # ['a', 'ab', 'abc', 'abcd', 'abcde', 'abcdef']
+    print(all_prefixes('abcdefg'))  # ['a', 'ab', 'abc', 'abcd', 'abcde', 'abcdef', 'abcdefg']
+    print(all_prefixes('abcdefgh'))  # ['a', 'ab', 'abc', 'abcd', 'abcde', 'abcdef', 'abcdefg', 'abcdefgh']
+    print(all_prefixes('abcdefghi'))  # ['a', 'ab', 'abc', 'abcd', 'abcde', 'abcdef', 'abcdefg', 'abcdefgh', 'abcdefghi']
+    print(all_prefixes('abcdefghij'))  # ['a', '
 Task_ID HumanEval/51:
 Prompt:
 
@@ -653,7 +874,27 @@ if __name__ == "__main__":
 
 #tests/test_remove_vowels.py
 import unittest
-from remove_vowels import remove_vow
+from remove_vowels import remove_vowels
+
+
+class TestRemoveVowels(unittest.TestCase):
+
+    def test_remove_vowels(self):
+        self.assertEqual(remove_vowels(''), '')
+        self.assertEqual(remove_vowels("abcdef\nghijklm"), 'bcdf\nghjklm')
+        self.assertEqual(remove_vowels('abcdef'), 'bcdf')
+        self.assertEqual(remove_vowels('aaaaa'), '')
+        self.assertEqual(remove_vowels('aaBAA'), 'B')
+        self.assertEqual(removeremove_vowels('zbcd'), 'zbcd')
+
+
+if __name__ == "__main__":
+    unittest.main()#src/config.py
+import os
+
+class Config:
+    SECRET_KEY = os.environ.get('SECRET_KEY')
+    SQLALCHEMY_DATABASE_URI = osSQLALCHEMY_DATABASE_URI = os
 Task_ID HumanEval/90:
 Prompt:
 
@@ -695,7 +936,30 @@ def next_smallest_v2(lst):
     Return None if there is no such element.
     
     next_smallest([1, 2, 3, 4, 5]) == 2
-    next_smallest([
+    next_smallest([5, 1, 4, 3, 2]) == 2
+    next_smallest([]) == None
+    next_smallest([1, 1]) == None
+    """
+    if len(lst) < 2:
+        return None
+    smallest = second_smallest = float('inf')
+    for num in lst:
+        if num < smallest:
+            second_smallest = smallest
+            smallest = num
+        elif num < second_smallest and num != smallest:
+            second_smallest = num
+    return None if second_smallest == float('inf') else second_smallest
+
+
+def next_smallest_v3(lst):
+    """
+    You are given a list of integers.
+    Write a function next_smallest() that returns the 2nd smallest element of the list.
+    Return None if there is no such element.
+    
+    next_smallest([1, 2, 3, 4, 5]) == 2
+    next_smallest([5, 1, 4, 
 Task_ID HumanEval/130:
 Prompt:
 
@@ -736,7 +1000,26 @@ def tri(n):
     Examples:
     tri(3) = [1, 3, 2, 8]
     """
-   
+    if n == 0:
+        return [0]
+    elif n == 1:
+        return [0, 3]
+    elif n == 2:
+        return [0, 3, 2]
+    else:
+        tri_seq = [0, 3, 2]
+        for i in range(3, n + 1):
+            if i % 2 == 0:
+                tri_seq.append(1 + i // 2)
+            else:
+                tri_seq.append(tri_seq[-1] + tri_seq[-2] + tri_seq[-3])
+        return tri_seq
+
+
+print(tri(3))  # [0, 3, 2, 8]
+print(tri(4))  # [0, 3, 2, 8, 14]
+print(tri(5)) [0, 3, 2, 8, 14, 27]
+print(tri(6))  # [0, 3, 2, 8, 14,
 Task_ID HumanEval/163:
 Prompt:
 
@@ -775,7 +1058,29 @@ def generate_integers_v2(a, b):
 
     For example:
     generate_integers_v2(2, 8) => [2, 4, 6, 8]
-    generate_integers_v2(8, 2) => [2,
+    generate_integers_v2(8, 2) => [2, 4, 6, 8]
+    generate_integers_v2(10, 14) => []
+    """
+    if a > b:
+        a, b = b, a
+    return [i for i in range(a, b + 1) if i % 2 == 0]
+
+
+def generate_integers_v3(a, b):
+    """
+    Given two positive integers a and b, return the even digits between a
+    and b, in ascending order.
+
+    For example:
+    generate_integers_v3(2, 8) => [2, 4, 6, 8]
+    generate_integers_v3(8, 2) => [2, 4, 6, 8]
+    generate_integers_v3(10, 14) => []
+    """
+    if a > b:
+        a, b = b, a
+    return [i for i in range(a, b + 1) if i % 2 == 0]
+
+
 Task_ID HumanEval/1:
 Prompt:
 from typing import List
@@ -818,7 +1123,22 @@ def separate_paren_groups(paren_string: str) -> List[str]:
     return groups
 
 
-if
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()
+
+#tests/test_separate_paren_groups.py
+import unittest
+from separate_paren_groups import separate_paren_groups
+
+class TestSeparateParenGroups(unittest.TestCase):
+
+    def test_separate_paren_groups(self):
+        self.assertEqual(separate_paren_groups('( ) (( )) (( )( ))'), ['()', '(())', '(()())'])
+        self.assertEqual(separate_paren_groups('((())) () (()(()))'), ['((()))', '()', '(()(()))'])
+        self.assertEqual(separate_paren_groups('() (()) ((())) ()'), ['()', '(())', '((()))', '()'])
+        self.assertEqual(separate_paren_groups('((( ))) () (() ()) (( ))'), ['((( )))', '()', '(() ())', '(( ))'])
+
 Task_ID HumanEval/36:
 Prompt:
 
@@ -858,7 +1178,16 @@ if __name__ == "__s__":
     doctest.run_docstring_examples(fizz_buzz, globals(), verbose=True)
     doctest.run_docstring_examples(fizzs__, globals(), verbose=True)
     doctest.run_docstring_examples(fizz_buzz, globals(), verbose=True)
-
+    doctest.run_docstring_examples(fizz_buzz, globals(), verbose=True)
+    doctest.run_docstring_examples(fizz_buzz, globals(), verbose=True)
+    doctest.run_docstring_examples(fizz_buzz, globals(), verbose=True)
+    doctest.run_docstring_examples(fizz_buzz, globals(), verbose=True)
+    doctest.run_docstring_examples(fizz_buzz, globals(), verbose=True)
+    doctest.run_docstring_examples(fizz_buzz, globals(), verbose=True)
+    doctest.run_docstring_examples(fizz_buzz, globals(), verbose=True)
+    doctest.run_docstring_examples(fizz_buzz, globals(), verbose=True)
+    doctest.run_docstring_examples(fizz_buzz, globals(), verbose=True)
+   
 Task_ID HumanEval/85:
 Prompt:
 
@@ -886,4 +1215,10 @@ print(add([4, 2, 6, 7]))  # 2
 print(add([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))  # 14
 print(add([10, 20, 30, 40, 50]))  # 60
 print(add([1, 2, 1, 2, 1, 2, 1, 2]))  # 0
-print(add([2, 3, 4, 5, 6, 7, 8, 9, 10, 11]))
+print(add([2, 3, 4, 5, 6, 7, 8, 9, 10, 11]))  # 30
+print(add([1, 1, 1, 1, 1, 1, 1, 1, 1, 1]))  # 0
+print(add([2]))  # 2
+print(add([1, 2]))  # 2
+print(add([1, 2, 1, 2, 1, 2, 1, 2, 1, 2]))  # 10
+print(add([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]))  # 110
+print(add([20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130,
