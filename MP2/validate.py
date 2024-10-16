@@ -43,16 +43,21 @@ def validate_repo_format(repo_url):
         )
         return False
 
-def clone_repo(repo_url):
+def clone_repo(repo_url, branch):
     repo_name = repo_url.split("/")[-1].replace(".git", "")
 
     if os.path.exists(repo_name):
         print(f"Repository {repo_name} already exists. Pulling latest changes...")
         repo = git.Repo(repo_name)
+
+        if branch in repo.branches:
+            repo.git.checkout(branch)
+        else:
+            repo.git.checkout('-b', branch, f'origin/{branch}')
         repo.git.pull()
     else:
         print(f"Cloning repository {repo_name}...")
-        git.Repo.clone_from(repo_url, repo_name)
+        git.Repo.clone_from(repo_url, repo_name, branch=branch)
 
     return repo_name
 
@@ -74,17 +79,20 @@ def validate_repo(repo_name):
         return False
 
     jsonl_files_with_seed = [
-        f"task_1_{seed_value}.jsonl",
-        f"task_2_{seed_value}.jsonl",
-        f"task_3_{seed_value}.jsonl",
-        f"task_3_{seed_value}.jsonl_results.jsonl",
+        f"task_1_{seed_value}_vanilla.jsonl",
+        f"task_1_{seed_value}_crafted.jsonl",
+        f"task_2_{seed_value}_vanilla.jsonl",
+        f"task_2_{seed_value}_crafted.jsonl",
     ]
 
     required_files = [
-        "task_1_prompt.log",
-        "task_2_prompt.log",
-        "task_3_prompt.log",
-        "task_3_evaluate.log",
+        "task_1.py",
+        "task_1_vanilla.log",
+        "task_1_crafted.log",
+        "task_2.py",
+        "task_2_vanilla.log",
+        "task_2_crafted.log",
+        "Coverage",
     ]
 
     all_required_files = required_files + jsonl_files_with_seed
@@ -132,8 +140,10 @@ def validate_jsonl_files(repo_name):
         return False
 
     jsonl_files_with_seed = [
-        f"task_3_{seed_value}.jsonl",
-        f"task_3_{seed_value}.jsonl_results.jsonl",
+        f"task_1_{seed_value}_vanilla.jsonl",
+        f"task_1_{seed_value}_crafted.jsonl",
+        f"task_2_{seed_value}_vanilla.jsonl",
+        f"task_2_{seed_value}_crafted.jsonl",
     ]
 
     for file in jsonl_files_with_seed:
@@ -143,11 +153,11 @@ def validate_jsonl_files(repo_name):
 
     return True
 
-def grade_repo(repo_url):
+def grade_repo(repo_url, branch):
     if not validate_repo_format(repo_url):
         return
 
-    repo_name = clone_repo(repo_url)
+    repo_name = clone_repo(repo_url, branch)
     if validate_repo(repo_name):
         print_message("success", f"Validation passed for {repo_name}!")
     else:
@@ -159,9 +169,10 @@ def grade_repo(repo_url):
         print_message("error", f"JSONL validation failed for {repo_name}!")
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Usage: python validate.py <GitHub Repo URL>")
+    if len(sys.argv) != 3:
+        print("Usage: python validate.py <GitHub Repo URL> <branch>")
         sys.exit(1)
 
     input_repo_url = sys.argv[1]
-    grade_repo(input_repo_url)
+    branch = sys.argv[2]
+    grade_repo(input_repo_url, branch)

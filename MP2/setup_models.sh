@@ -7,3 +7,4 @@ pip3 install evaluate==0.4.0
 pip3 install scikit-learn==1.2.2
 pip3 install sentencepiece==0.1.99
 pip3 install wandb==0.15.3
+pip3 install jsonlines

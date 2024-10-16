@@ -11,31 +11,41 @@ def save_file(content, file_path):
     with open(file_path, 'w') as file:
         file.write(content)
 
-def prompt_model(dataset, model_name = "deepseek-ai/deepseek-coder-6.7b-base", quantization = True):
-    print(f"Working with {model_name} quantization {quantization}...")
+def prompt_model(dataset, model_name = "deepseek-ai/deepseek-coder-6.7b-instruct", vanilla = True):
+    print(f"Working with {model_name} prompt type {vanilla}...")
     
-    # TODO: download the model
+    # TODO: download the model; load the model with quantization
+    bnb_config = BitsAndBytesConfig(
+        load_in_4bit=True,  # We can also choose load_in_8bit for 8-bit quantization
+        bnb_4bit_use_double_quant=True,
+        bnb_4bit_quant_type="nf4",
+        bnb_4bit_compute_dtype=torch.bfloat16  # Use bfloat16 for reduced memory usage
+    )
+    model = AutoModelForCausalLM.from_pretrained(model_name, quantization_config=bnb_config, device_map="auto")
+    # Loading the tokenizer
+    tokenizer = AutoTokenizer.from_pretrained(model_name)
     
-  
-    if quantization:
-        # TODO: load the model with quantization
-        
-    else:
-        # TODO: load the model without quantization
-        
-
     results = []
-    for case in dataset:
+    for entry in dataset:
         # TODO: create prompt for the model
         # Tip : Use can use any data from the dataset to create 
         #       the prompt including prompt, canonical_solution, test, etc.
+        prompt = ""
         
         # TODO: prompt the model and get the response
+        response = ""
 
         # TODO: process the response and save it to results
+        verdict = False
 
-        print(f"Task_ID {case['task_id']}:\nPrompt:\n{prompt}\nResponse:\n{response}\nResponse:\n{processed_response}")
-        results.append(dict(task_id=case["task_id"], completion=processed_response))
+        print(f"Task_ID {entry['task_id']}:\nprompt:\n{prompt}\nresponse:\n{response}\nis_correct:\n{verdict}")
+        results.append({
+            "task_id": entry["task_id"],
+            "prompt": prompt,
+            "response": response,
+            "is_correct": verdict
+        })
+        
     return results
 
 def read_jsonl(file_path):
@@ -54,13 +64,13 @@ if __name__ == "__main__":
     """
     This Python script is to run prompt LLMs for code synthesis.
     Usage:
-    `python3 model_prompting.py <input_dataset> <model> <output_file> <if_quantization>`|& tee prompt.log
+    `python3 Task_1.py <input_dataset> <model> <output_file> <if_vanilla>`|& tee prompt.log
 
     Inputs:
     - <input_dataset>: A `.jsonl` file, which should be your team's dataset containing 20 HumanEval problems.
     - <model>: Specify the model to use. Options are "deepseek-ai/deepseek-coder-6.7b-base" or "deepseek-ai/deepseek-coder-6.7b-instruct".
     - <output_file>: A `.jsonl` file where the results will be saved.
-    - <if_quantization>: Set to 'True' or 'False' to enable or disable model quantization.
+    - <if_vanilla>: Set to 'True' or 'False' to enable vanilla prompt
     
     Outputs:
     - You can check <output_file> for detailed information.
@@ -69,7 +79,7 @@ if __name__ == "__main__":
     input_dataset = args[0]
     model = args[1]
     output_file = args[2]
-    if_quantization = args[3] # True or False
+    if_vanilla = args[3] # True or False
     
     if not input_dataset.endswith(".jsonl"):
         raise ValueError(f"{input_dataset} should be a `.jsonl` file!")
@@ -77,8 +87,8 @@ if __name__ == "__main__":
     if not output_file.endswith(".jsonl"):
         raise ValueError(f"{output_file} should be a `.jsonl` file!")
     
-    quantization = True if if_quantization == "True" else False
+    vanilla = True if if_vanilla == "True" else False
     
     dataset = read_jsonl(input_dataset)
-    results = prompt_model(dataset, model, quantization)
+    results = prompt_model(dataset, model, vanilla)
     write_jsonl(results, output_file)
