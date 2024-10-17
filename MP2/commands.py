@@ -7,7 +7,7 @@
 %cd [Your GitHub Repo]/MP2
 
 # TODO: Replace the file path of selected_humaneval_[seed].jsonl generated in MP1
-input_dataset = "MP1\selected_humaneval_69841794489092767809710484565965079173.jsonl"# selected_humaneval_[seed].jsonl
+input_dataset = "selected_humaneval_69841794489092767809710484565965079173.jsonl"# selected_humaneval_[seed].jsonl
 
 # Set up requirements for model prompting
 ! bash -x MP2/setup_models.sh

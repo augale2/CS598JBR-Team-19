@@ -1,6 +1,8 @@
 import jsonlines
 import sys
 import torch
+import random
+import re
 from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
 
 #####################################################
@@ -27,16 +29,75 @@ def prompt_model(dataset, model_name = "deepseek-ai/deepseek-coder-6.7b-instruct
     
     results = []
     for entry in dataset:
+        # randomly pull one of the assertions
+        assertions = re.findall(r'assert\s*', entry['test'])
+        a = random.choice(assertions) # one random assertion from test
+
+        separation_pattern = r"assert candidate\((.*?)\) == (.*)"
+        match = re.search(separation_pattern, a)
+        
+        if match:
+            input_value = match.group(1)  # Extracted input inside candidate()
+            expected_value = match.group(2)  # Extracted expected output
+
+            # Convert the extracted strings into Python objects using eval
+            try:
+                assert_input = eval(input_value)
+                assert_output = eval(expected_value)
+            except Exception as e:
+                print(f"Error evaluating the assertion: {e}")
+
         # TODO: create prompt for the model
         # Tip : Use can use any data from the dataset to create 
         #       the prompt including prompt, canonical_solution, test, etc.
-        prompt = ""
+        if vanilla:
+            prompt = f"""
+                     ### Context:
+                     You are an AI programming assistant. You are an AI programming assistant, utilizing the DeepSeek Coder model, developed by DeepSeek Company, and you only answer questions related to computer science. For politically sensitive questions, security and privacy issues, and other non-computer science questions, you will refuse to answer. 
+
+                     ### Instruction:
+                     If the string is '{assert_input}', what will the following code return?
+                     The return value prediction must be enclosed between [Output] and [/Output] tags. For example : [Output]prediction[/Output]
+
+                     ### Code:
+                     {entry['canonical_solution']}
+                     """
+        else:
+            prompt = f"""
+                     ### Context:
+                     You are an AI programming assistant. You are an AI programming assistant, utilizing the DeepSeek Coder model, developed by DeepSeek Company, and you only answer questions related to computer science. For politically sensitive questions, security and privacy issues, and other non-computer science questions, you will refuse to answer. 
+
+                     ### Instruction:
+                     If the string is '{assert_input}', what will the following code return?
+
+                     ### Context:
+                     Here is a description on how this code functions:
+                     {entry['prompt']}
+
+                     The return value prediction must be enclosed between [Output] and [/Output] tags. For example : [Output]prediction[/Output]
+                     You should reason through each step of the program to ensure accuracy
+
+                     ### Code:
+                     {entry['canonical_solution']}
+                     """
         
         # TODO: prompt the model and get the response
-        response = ""
+        inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
+        outputs = model.generate(**inputs, max_length=500, temperature=0)
+        response = tokenizer.decode(outputs[0], skip_special_tokens=True)
 
         # TODO: process the response and save it to results
-        verdict = False
+        pattern = r"\[Output\](.*?)\[/Output\]" # pull out the prediction
+        match = re.search(pattern, response)
+
+        if match:
+            response_prediction = match.group(1) # pull out output
+            # Convert the extracted strings into Python objects using eval
+            try:
+                eval_response_prediction = eval(response_prediction) 
+                verdict = assert_output == eval_response_prediction # check if the prediction is correct
+            except Exception as e:
+                print(f"Error comparing results: {e}")
 
         print(f"Task_ID {entry['task_id']}:\nprompt:\n{prompt}\nresponse:\n{response}\nis_correct:\n{verdict}")
         results.append({
