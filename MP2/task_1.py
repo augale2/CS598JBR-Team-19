@@ -35,6 +35,9 @@ def prompt_model(dataset, model_name = "deepseek-ai/deepseek-coder-6.7b-instruct
         
         # randomly pull one of the assertions
         assertions = re.findall(r'assert\s*', entry['test'])
+
+        print(assertions)
+
         a = random.choice(assertions) # one random assertion from test
 
         separation_pattern = r"assert candidate\((.*?)\) == (.*)"
