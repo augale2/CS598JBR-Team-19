@@ -293,7 +293,10 @@ def prompt_model(dataset, model_name = "deepseek-ai/deepseek-coder-6.7b-instruct
     print(analysis)
     return results
 
-
+def write_jsonl(results, file_path):
+    with jsonlines.open(file_path, "w") as f:
+        for item in results:
+            f.write_all([item])
 
 
 
@@ -312,4 +315,4 @@ if __name__ == "__main__":
     print(f"Model: {model}")
     print(f"Vanilla Path: {vanilla}")
     
-    save_file(json.dumps(results), save_path)  # Save the results to a file
+    write_jsonl(results, save_path) # Save the results to a file
