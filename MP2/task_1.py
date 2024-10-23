@@ -96,6 +96,7 @@ def prompt_model(dataset, model_name = "deepseek-ai/deepseek-coder-6.7b-instruct
         # TODO: process the response and save it to results
         pattern = r"\[Output\](.*?)\[/Output\]" # pull out the prediction
         match = re.search(pattern, response)
+        verdict = False
 
         if match:
             response_prediction = match.group(1) # pull out output
