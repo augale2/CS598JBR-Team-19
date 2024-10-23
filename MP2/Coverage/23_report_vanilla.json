@@ -1,0 +1,135 @@
+{
+    "meta": {
+        "format": 3,
+        "version": "7.6.4",
+        "timestamp": "2024-10-23T02:21:45.000603",
+        "branch_coverage": false,
+        "show_contexts": false
+    },
+    "files": {
+        "23_test.py": {
+            "executed_lines": [
+                1,
+                2,
+                11,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                22
+            ],
+            "summary": {
+                "covered_lines": 12,
+                "num_statements": 13,
+                "percent_covered": 92.3076923076923,
+                "percent_covered_display": "92",
+                "missing_lines": 1,
+                "excluded_lines": 0
+            },
+            "missing_lines": [
+                23
+            ],
+            "excluded_lines": [],
+            "functions": {
+                "strlen": {
+                    "executed_lines": [
+                        11
+                    ],
+                    "summary": {
+                        "covered_lines": 1,
+                        "num_statements": 1,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": []
+                },
+                "test_strlen": {
+                    "executed_lines": [
+                        14,
+                        15,
+                        16,
+                        17,
+                        18,
+                        19,
+                        20
+                    ],
+                    "summary": {
+                        "covered_lines": 7,
+                        "num_statements": 7,
+                        "percent_covered": 100.0,
+                        "percent_covered_display": "100",
+                        "missing_lines": 0,
+                        "excluded_lines": 0
+                    },
+                    "missing_lines": [],
+                    "excluded_lines": []
+                },
+                "": {
+                    "executed_lines": [
+                        1,
+                        2,
+                        13,
+                        22
+                    ],
+                    "summary": {
+                        "covered_lines": 4,
+                        "num_statements": 5,
+                        "percent_covered": 80.0,
+                        "percent_covered_display": "80",
+                        "missing_lines": 1,
+                        "excluded_lines": 0
+                    },
+                    "missing_lines": [
+                        23
+                    ],
+                    "excluded_lines": []
+                }
+            },
+            "classes": {
+                "": {
+                    "executed_lines": [
+                        1,
+                        2,
+                        11,
+                        13,
+                        14,
+                        15,
+                        16,
+                        17,
+                        18,
+                        19,
+                        20,
+                        22
+                    ],
+                    "summary": {
+                        "covered_lines": 12,
+                        "num_statements": 13,
+                        "percent_covered": 92.3076923076923,
+                        "percent_covered_display": "92",
+                        "missing_lines": 1,
+                        "excluded_lines": 0
+                    },
+                    "missing_lines": [
+                        23
+                    ],
+                    "excluded_lines": []
+                }
+            }
+        }
+    },
+    "totals": {
+        "covered_lines": 12,
+        "num_statements": 13,
+        "percent_covered": 92.3076923076923,
+        "percent_covered_display": "92",
+        "missing_lines": 1,
+        "excluded_lines": 0
+    }
+}
