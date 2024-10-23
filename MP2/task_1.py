@@ -299,6 +299,17 @@ def prompt_model(dataset, model_name = "deepseek-ai/deepseek-coder-6.7b-instruct
 
 if __name__ == "__main__":
     dataset_path = sys.argv[1]  # Path to dataset
-    save_path = sys.argv[2]     # Path to save the results JSON file
-    results = prompt_model(dataset_path, vanilla=True)  # Get the model response
+    save_path = sys.argv[3] 
+
+    model = sys.argv[2]
+
+    vanilla = sys.argv[4]    # Path to save the results JSON file
+    
+    results = prompt_model(dataset_path, vanilla)  # Get the model response
+
+    print(f"Dataset Path: {dataset_path}")
+    print(f"Save Path: {save_path}")
+    print(f"Model: {model}")
+    print(f"Vanilla Path: {vanilla}")
+    
     save_file(json.dumps(results), save_path)  # Save the results to a file
