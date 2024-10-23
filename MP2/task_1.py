@@ -34,6 +34,7 @@ def prompt_model(dataset, model_name = "deepseek-ai/deepseek-coder-6.7b-instruct
         assert_output = None
         
         # randomly pull one of the assertions
+        print(entry)
         assertions = re.findall(r'assert\s*', entry['test'])
 
         print(assertions)
@@ -107,9 +108,11 @@ def prompt_model(dataset, model_name = "deepseek-ai/deepseek-coder-6.7b-instruct
             # Convert the extracted strings into Python objects using eval
             try:
                 eval_response_prediction = eval(response_prediction) 
-                verdict = assert_output == eval_response_prediction # check if the prediction is correct
+                verdict = (assert_output == eval_response_prediction) # check if the prediction is correct
             except Exception as e:
                 print(f"Error comparing results: {e}")
+        else:
+            verdict = False
 
         print(f"Task_ID {entry['task_id']}:\nprompt:\n{prompt}\nresponse:\n{response}\nis_correct:\n{verdict}")
         results.append({
