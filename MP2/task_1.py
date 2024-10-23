@@ -211,7 +211,7 @@ def analyze_results(results):
         "incorrect_task_ids": incorrect_task_ids,
     }
 
-def prompt_model(dataset, model_name = "deepseek-ai/deepseek-coder-6.7b-instruct", vanilla = True):
+def prompt_model(dataset, model_name = "deepseek-ai/deepseek-coder-6.7b-instruct", vanilla=True):
     cache_dir = "/content/model_cache"
     os.makedirs(cache_dir, exist_ok=True)
     marker_file = os.path.join(cache_dir, "model_downloaded.txt")
@@ -305,8 +305,8 @@ if __name__ == "__main__":
 
     vanilla = sys.argv[4]    # Path to save the results JSON file
     
-    results = prompt_model(dataset_path, vanilla)  # Get the model response
-
+     results = prompt_model(dataset_path, model,vanilla)  # Get the model response
+    
     print(f"Dataset Path: {dataset_path}")
     print(f"Save Path: {save_path}")
     print(f"Model: {model}")
