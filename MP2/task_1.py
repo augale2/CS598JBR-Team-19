@@ -30,38 +30,40 @@ def prompt_model(dataset, model_name = "deepseek-ai/deepseek-coder-6.7b-instruct
     results = []
     for entry in dataset:
 
-        assert_input = None
-        assert_output = None
-        
-        # randomly pull one of the assertions
-        assertions = re.findall(r'assert candidate\((.*?)\)\s*==\s*(True|False|[^\s]+)', entry['test'])
-        a = random.choice(assertions) # one random assertion from test
-
-        assert_input = a[0]
-        expected_output = a[1]
-
         # TODO: create prompt for the model
         # Tip : Use can use any data from the dataset to create 
         #       the prompt including prompt, canonical_solution, test, etc.
         if vanilla:
+            # randomly pull one of the assertions
+            assertions = re.findall(r'assert candidate\((.*?)\)\s*==\s*(True|False|[^\s]+)', entry['test'])
+            a = random.choice(assertions) # one random assertion from test
+
+            assert_input = a[0]
+            expected_output = a[1]
             prompt = f"""
                      ### Context:
                      You are an AI programming assistant. You are an AI programming assistant, utilizing the DeepSeek Coder model, developed by DeepSeek Company, and you only answer questions related to computer science. For politically sensitive questions, security and privacy issues, and other non-computer science questions, you will refuse to answer. 
 
                      ### Instruction:
-                     If the string is '{assert_input}', what will the following code return?
+                     If the input string is '{assert_input}', what will the following code return?
                      The return value prediction must be enclosed between [Output] and [/Output] tags. For example : [Output]prediction[/Output]
 
                      ### Code:
                      {entry['canonical_solution']}
                      """
         else:
+            # randomly pull one of the assertions
+            assertions = re.findall(r'assert candidate\((.*?)\)\s*==\s*(True|False|[^\s]+)', entry['test'])
+            a = random.choice(assertions) # one random assertion from test
+
+            assert_input = a[0]
+            expected_output = a[1]
             prompt = f"""
                      ### Context:
                      You are an AI programming assistant. You are an AI programming assistant, utilizing the DeepSeek Coder model, developed by DeepSeek Company, and you only answer questions related to computer science. For politically sensitive questions, security and privacy issues, and other non-computer science questions, you will refuse to answer. 
 
                      ### Instruction:
-                     If the string is '{assert_input}', what will the following code return?
+                     If the input string is '{assert_input}', what will the following code return?
 
                      ### Context:
                      Here is a description on how this code functions:
@@ -118,6 +120,24 @@ def write_jsonl(results, file_path):
         for item in results:
             f.write_all([item])
 
+
+#FUNCTION EXISTS FOR DEBUG PURPOSES
+def print_results(dataset):
+    for entry in dataset:
+        print("************************************************")
+        print(entry['test'] + "\n")
+        assertions = re.findall(r'assert candidate\((.*?)\)\s*==\s*(True|False|[^\s]+)', entry['test'])
+        print(assertions)
+
+        a = random.choice(assertions) # one random assertion from test
+        print(f"Random assertion: {a}\n")
+
+        assert_input = a[0]
+        assert_output = a[1]
+        print(f"if the input is {assert_input}, the expected output should be {assert_output}")
+
+        print("************************************************\n\n\n\n\n\n\n\n\n")
+
 if __name__ == "__main__":
     """
     This Python script is to run prompt LLMs for code synthesis.
@@ -148,5 +168,6 @@ if __name__ == "__main__":
     vanilla = True if if_vanilla == "True" else False
     
     dataset = read_jsonl(input_dataset)
+    # print_results(dataset)
     results = prompt_model(dataset, model, vanilla)
     write_jsonl(results, output_file)
