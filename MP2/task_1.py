@@ -40,6 +40,7 @@ def prompt_model(dataset, model_name = "deepseek-ai/deepseek-coder-6.7b-instruct
         separation_pattern = r"assert candidate\((.*?)\) == (.*)"
         match = re.search(separation_pattern, a)
         
+        print(match)
         if match:
             input_value = match.group(1)  # Extracted input inside candidate()
             expected_value = match.group(2)  # Extracted expected output
@@ -90,7 +91,7 @@ def prompt_model(dataset, model_name = "deepseek-ai/deepseek-coder-6.7b-instruct
         
         # TODO: prompt the model and get the response
         inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
-        outputs = model.generate(**inputs, max_length=500, temperature=0)
+        outputs = model.generate(**inputs, max_length=1000, temperature=0)
         response = tokenizer.decode(outputs[0], skip_special_tokens=True)
 
         # TODO: process the response and save it to results
