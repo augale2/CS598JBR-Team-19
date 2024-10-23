@@ -83,26 +83,17 @@ def prompt_model(dataset, model_name = "deepseek-ai/deepseek-coder-6.7b-instruct
 
         # TODO: process the response and save it to results
         pattern = r"\[Output\](.*?)\[/Output\]" # pull out the prediction
-        match = re.search(pattern, response)
+        output_list = re.findall(pattern, response)
+        output = eval(output_list[0])
 
-        if match:
-            response_prediction = match.group(1) # pull out output
-            # Convert the extracted strings into Python objects using eval
-            try:
-                eval_response_prediction = eval(response_prediction) 
-                eval_expected = eval(expected_output)
-                verdict = (eval_expected == eval_response_prediction) # check if the prediction is correct
-                print(f"Task_ID {entry['task_id']}:\nprompt:\n{prompt}\nresponse:\n{response}\nis_correct:\n{verdict}")
-                results.append({
-                    "task_id": entry["task_id"],
-                    "prompt": prompt,
-                    "response": response,
-                    "is_correct": verdict
-                })
-            except Exception as e:
-                print(f"Error comparing results: {e}")
-        else:
-            verdict = False
+        verdict = (output == expected_output) # check if the prediction is correct
+        print(f"Task_ID {entry['task_id']}:\nprompt:\n{prompt}\nresponse:\n{response}\nis_correct:\n{verdict}")
+        results.append({
+            "task_id": entry["task_id"],
+            "prompt": prompt,
+            "response": response,
+            "is_correct": verdict
+        })
 
         
     return results
