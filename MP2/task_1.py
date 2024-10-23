@@ -29,6 +29,10 @@ def prompt_model(dataset, model_name = "deepseek-ai/deepseek-coder-6.7b-instruct
     
     results = []
     for entry in dataset:
+
+        assert_input = None
+        assert_output = None
+        
         # randomly pull one of the assertions
         assertions = re.findall(r'assert\s*', entry['test'])
         a = random.choice(assertions) # one random assertion from test
@@ -39,6 +43,9 @@ def prompt_model(dataset, model_name = "deepseek-ai/deepseek-coder-6.7b-instruct
         if match:
             input_value = match.group(1)  # Extracted input inside candidate()
             expected_value = match.group(2)  # Extracted expected output
+            
+            print(f"Input: {input_value}")
+            print(f"Expected: {expected_value}")
 
             # Convert the extracted strings into Python objects using eval
             try:
