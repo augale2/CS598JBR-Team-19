@@ -305,7 +305,7 @@ if __name__ == "__main__":
 
     vanilla = sys.argv[4]    # Path to save the results JSON file
     
-     results = prompt_model(dataset_path, model,vanilla)  # Get the model response
+    results = prompt_model(dataset_path, model,vanilla)  # Get the model response
     
     print(f"Dataset Path: {dataset_path}")
     print(f"Save Path: {save_path}")
