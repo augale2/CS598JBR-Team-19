@@ -34,30 +34,11 @@ def prompt_model(dataset, model_name = "deepseek-ai/deepseek-coder-6.7b-instruct
         assert_output = None
         
         # randomly pull one of the assertions
-        print(entry)
-        assertions = re.findall(r'assert\s*', entry['test'])
-
-        print(assertions)
-
+        assertions = re.findall(r'assert candidate\((.*?)\)\s*==\s*(True|False|[^\s]+)', entry['test'])
         a = random.choice(assertions) # one random assertion from test
 
-        separation_pattern = r"assert candidate\((.*?)\) == (.*)"
-        match = re.search(separation_pattern, a)
-        
-        print(match)
-        if match:
-            input_value = match.group(1)  # Extracted input inside candidate()
-            expected_value = match.group(2)  # Extracted expected output
-            
-            print(f"Input: {input_value}")
-            print(f"Expected: {expected_value}")
-
-            # Convert the extracted strings into Python objects using eval
-            try:
-                assert_input = eval(input_value)
-                assert_output = eval(expected_value)
-            except Exception as e:
-                print(f"Error evaluating the assertion: {e}")
+        assert_input = a[0]
+        expected_output = a[1]
 
         # TODO: create prompt for the model
         # Tip : Use can use any data from the dataset to create 
@@ -108,7 +89,8 @@ def prompt_model(dataset, model_name = "deepseek-ai/deepseek-coder-6.7b-instruct
             # Convert the extracted strings into Python objects using eval
             try:
                 eval_response_prediction = eval(response_prediction) 
-                verdict = (assert_output == eval_response_prediction) # check if the prediction is correct
+                eval_expected = eval(expected_output)
+                verdict = (eval_expected == eval_response_prediction) # check if the prediction is correct
             except Exception as e:
                 print(f"Error comparing results: {e}")
         else:
