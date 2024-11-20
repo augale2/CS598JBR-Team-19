@@ -1,0 +1,863 @@
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:797: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+/usr/local/lib/python3.10/dist-packages/bitsandbytes/cuda_setup/main.py:149: UserWarning: /usr/lib64-nvidia did not contain ['libcudart.so', 'libcudart.so.11.0', 'libcudart.so.12.0'] as expected! Searching further paths...
+  warn(msg)
+/usr/local/lib/python3.10/dist-packages/bitsandbytes/cuda_setup/main.py:149: UserWarning: WARNING: The following directories listed in your path were found to be non-existent: {PosixPath('/sys/fs/cgroup/memory.events /var/colab/cgroup/jupyter-children/memory.events')}
+  warn(msg)
+/usr/local/lib/python3.10/dist-packages/bitsandbytes/cuda_setup/main.py:149: UserWarning: WARNING: The following directories listed in your path were found to be non-existent: {PosixPath('8013'), PosixPath('http'), PosixPath('//172.28.0.1')}
+  warn(msg)
+/usr/local/lib/python3.10/dist-packages/bitsandbytes/cuda_setup/main.py:149: UserWarning: WARNING: The following directories listed in your path were found to be non-existent: {PosixPath('//colab.research.google.com/tun/m/cc48301118ce562b961b3c22d803539adc1e0c19/gpu-t4-s-3kwzm2di3fxn0 --tunnel_background_save_delay=10s --tunnel_periodic_background_save_frequency=30m0s --enable_output_coalescing=true --output_coalescing_required=true'), PosixPath('--logtostderr --listen_host=172.28.0.12 --target_host=172.28.0.12 --tunnel_background_save_url=https')}
+  warn(msg)
+/usr/local/lib/python3.10/dist-packages/bitsandbytes/cuda_setup/main.py:149: UserWarning: WARNING: The following directories listed in your path were found to be non-existent: {PosixPath('/datalab/web/pyright/typeshed-fallback/stdlib,/usr/local/lib/python3.10/dist-packages')}
+  warn(msg)
+/usr/local/lib/python3.10/dist-packages/bitsandbytes/cuda_setup/main.py:149: UserWarning: WARNING: The following directories listed in your path were found to be non-existent: {PosixPath('/env/python')}
+  warn(msg)
+/usr/local/lib/python3.10/dist-packages/bitsandbytes/cuda_setup/main.py:149: UserWarning: WARNING: The following directories listed in your path were found to be non-existent: {PosixPath('//ipykernel.pylab.backend_inline'), PosixPath('module')}
+  warn(msg)
+2024-11-20 03:37:44.580134: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:485] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2024-11-20 03:37:44.600460: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:8454] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2024-11-20 03:37:44.606419: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1452] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2024-11-20 03:37:45.701916: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+Model:  deepseek-ai/deepseek-coder-6.7b-instruct
+
+===================================BUG REPORT===================================
+Welcome to bitsandbytes. For bug reports, please run
+
+python -m bitsandbytes
+
+ and submit this information together with your error trace to: https://github.com/TimDettmers/bitsandbytes/issues
+================================================================================
+bin /usr/local/lib/python3.10/dist-packages/bitsandbytes/libbitsandbytes_cuda122.so
+CUDA_SETUP: WARNING! libcudart.so not found in any environmental path. Searching in backup paths...
+CUDA SETUP: CUDA runtime path found: /usr/local/cuda/lib64/libcudart.so
+CUDA SETUP: Highest compute capability among GPUs detected: 7.5
+CUDA SETUP: Detected CUDA version 122
+CUDA SETUP: Loading binary /usr/local/lib/python3.10/dist-packages/bitsandbytes/libbitsandbytes_cuda122.so...
+
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]
+Loading checkpoint shards:  50%|█████     | 1/2 [00:55<00:55, 55.08s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [01:14<00:00, 34.15s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [01:14<00:00, 37.29s/it]
+Some weights of LlamaForCausalLM were not initialized from the model checkpoint at deepseek-ai/deepseek-coder-6.7b-instruct and are newly initialized: ['model.layers.8.self_attn.rotary_emb.inv_freq', 'model.layers.4.self_attn.rotary_emb.inv_freq', 'model.layers.16.self_attn.rotary_emb.inv_freq', 'model.layers.26.self_attn.rotary_emb.inv_freq', 'model.layers.21.self_attn.rotary_emb.inv_freq', 'model.layers.1.self_attn.rotary_emb.inv_freq', 'model.layers.14.self_attn.rotary_emb.inv_freq', 'model.layers.29.self_attn.rotary_emb.inv_freq', 'model.layers.30.self_attn.rotary_emb.inv_freq', 'model.layers.9.self_attn.rotary_emb.inv_freq', 'model.layers.6.self_attn.rotary_emb.inv_freq', 'model.layers.12.self_attn.rotary_emb.inv_freq', 'model.layers.27.self_attn.rotary_emb.inv_freq', 'model.layers.23.self_attn.rotary_emb.inv_freq', 'model.layers.2.self_attn.rotary_emb.inv_freq', 'model.layers.18.self_attn.rotary_emb.inv_freq', 'model.layers.15.self_attn.rotary_emb.inv_freq', 'model.layers.25.self_attn.rotary_emb.inv_freq', 'model.layers.31.self_attn.rotary_emb.inv_freq', 'model.layers.7.self_attn.rotary_emb.inv_freq', 'model.layers.24.self_attn.rotary_emb.inv_freq', 'model.layers.10.self_attn.rotary_emb.inv_freq', 'model.layers.5.self_attn.rotary_emb.inv_freq', 'model.layers.3.self_attn.rotary_emb.inv_freq', 'model.layers.11.self_attn.rotary_emb.inv_freq', 'model.layers.28.self_attn.rotary_emb.inv_freq', 'model.layers.0.self_attn.rotary_emb.inv_freq', 'model.layers.13.self_attn.rotary_emb.inv_freq', 'model.layers.17.self_attn.rotary_emb.inv_freq', 'model.layers.20.self_attn.rotary_emb.inv_freq', 'model.layers.22.self_attn.rotary_emb.inv_freq', 'model.layers.19.self_attn.rotary_emb.inv_freq']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:797: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+/usr/local/lib/python3.10/dist-packages/transformers/generation/utils.py:1270: UserWarning: You have modified the pretrained model configuration to control generation. This is a deprecated strategy to control generation and will be removed soon, in a future version. Please use a generation configuration file (see https://huggingface.co/docs/transformers/main_classes/text_generation )
+  warnings.warn(
+--------------JAVA CODE------------------
+None
+-----------------------------------------
+--##########---TEST CODE------########----
+import java.util.*;
+import java.lang.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Solution s = new Solution();
+        List<Boolean> correct = Arrays.asList(
+                s.separateParenGroups("(()()) ((())) () ((())()())").equals(Arrays.asList(
+                        "(()())", "((()))", "()", "((())()())"
+                )),
+                s.separateParenGroups("() (()) ((())) (((())))").equals(Arrays.asList(
+                        "()", "(())", "((()))", "(((())))"
+                )),
+                s.separateParenGroups("(()(())((())))").equals(Arrays.asList(
+                        "(()(())((())))"
+                )),
+                s.separateParenGroups("( ) (( )) (( )( ))").equals(Arrays.asList("()", "(())", "(()())"))
+        );
+        if (correct.contains(false)) {
+            throw new AssertionError();
+        }
+    }
+}
+-----------------------------------------
+--------------JAVA CODE------------------
+import java.util.*;
+import java.lang.*;
+
+class Solution {
+    public boolean belowZero(List<Integer> operations) {
+        int balance = 0;
+
+        for (int op : operations) {
+            balance += op;
+            if (balance < 0) {
+                return true;
+           }
+
+        return false;
+    }
+}
+-----------------------------------------
+--##########---TEST CODE------########----
+import java.util.*;
+import java.lang.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Solution s = new Solution();
+        List<Boolean> correct = Arrays.asList(
+                !s.belowZero(new ArrayList<>(Arrays.asList())),
+                !s.belowZero(new ArrayList<>(Arrays.asList(1, 2, -3, 1, 2, -3))),
+                s.belowZero(new ArrayList<>(Arrays.asList(1, 2, -4, 5, 6))),
+                !s.belowZero(new ArrayList<>(Arrays.asList(1, -1, 2, -2, 5, -5, 4, -4))),
+                s.belowZero(new ArrayList<>(Arrays.asList(1, -1, 2, -2, 5, -5, 4, -5))),
+                s.belowZero(new ArrayList<>(Arrays.asList(1, -2, 2, -2, 5, -5, 4, -4)))
+        );
+        if (correct.contains(false)) {
+            throw new AssertionError();
+        }
+    }
+}
+-----------------------------------------
+Compilation Error:
+ Solution.java:16: error: reached end of file while parsing
+}
+ ^
+1 error
+
+--------------JAVA CODE------------------
+import java.util.*;
+import java.lang.*;
+
+class Solution {
+    public List<String> filterBySubstring(List<String> strings, String substring) {
+        List<String> filteredStrings = new ArrayList<>();
+        for (String string : strings) {
+            if (string.contains(substring)) {
+                filteredStrings.add(string);
+            }
+        }
+        return filteredStrings;
+    }
+}
+-----------------------------------------
+--##########---TEST CODE------########----
+import java.util.*;
+import java.lang.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Solution s = new Solution();
+        List<Boolean> correct = Arrays.asList(
+                s.filterBySubstring(new ArrayList<>(List.of()), "john").equals(List.of()),
+                s.filterBySubstring(new ArrayList<>(Arrays.asList("xxx", "asd", "xxy", "john doe", "xxxAAA", "xxx")), "xxx").equals(Arrays.asList("xxx", "xxxAAA", "xxx")),
+                s.filterBySubstring(new ArrayList<>(Arrays.asList("xxx", "asd", "aaaxxy", "john doe", "xxxAAA", "xxx")), "xx").equals(Arrays.asList("xxx", "aaaxxy", "xxxAAA", "xxx")),
+                s.filterBySubstring(new ArrayList<>(Arrays.asList("grunt", "trumpet", "prune", "gruesome")), "run").equals(Arrays.asList("grunt", "prune"))
+        );
+        if (correct.contains(false)) {
+            throw new AssertionError();
+        }
+    }
+}
+-----------------------------------------
+Execution Output:
+ 
+--------------JAVA CODE------------------
+import java.util.*;
+import java.lang.*;
+
+class Solution {
+    public List<Integer> rollingMax(List<Integer> numbers) {
+        List<Integer> result = new ArrayList<>();
+        Integer runningMax = null;
+
+        for (Integer n : numbers) {
+            if (runningMax == null) {
+                runningMax = n;
+            } else {
+                runningMax = Math.max(runningMax, n);
+            }
+
+            result.add(runningMax);
+        }
+
+        return result;
+    }
+}
+-----------------------------------------
+--##########---TEST CODE------########----
+import java.util.*;
+import java.lang.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Solution s = new Solution();
+        List<Boolean> correct = Arrays.asList(
+                s.rollingMax(new ArrayList<>(List.of())).equals(List.of()),
+                s.rollingMax(new ArrayList<>(Arrays.asList(1, 2, 3, 4))).equals(Arrays.asList(1, 2, 3, 4)),
+                s.rollingMax(new ArrayList<>(Arrays.asList(4, 3, 2, 1))).equals(Arrays.asList(4, 4, 4, 4)),
+                s.rollingMax(new ArrayList<>(Arrays.asList(3, 2, 3, 100, 3))).equals(Arrays.asList(3, 3, 3, 100, 100))
+        );
+        if (correct.contains(false)) {
+            throw new AssertionError();
+        }
+    }
+}
+-----------------------------------------
+Execution Output:
+ 
+--------------JAVA CODE------------------
+import java.util.*;
+import java.lang.*;
+
+class Solution {
+    public List<String> allPrefixes(String string) {
+        List<String> result = new ArrayList<>();
+
+        for (int i = 0; i < string.length(); i++) {
+            result.add(string.substring(0, i + 1));
+        }
+        return result;
+    }
+}
+-----------------------------------------
+--##########---TEST CODE------########----
+import java.util.*;
+import java.lang.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Solution s = new Solution();
+        List<Boolean> correct = Arrays.asList(
+                s.allPrefixes("").equals(List.of()),
+                s.allPrefixes("asdfgh").equals(Arrays.asList("a", "as", "asd", "asdf", "asdfg", "asdfgh")),
+                s.allPrefixes("WWW").equals(Arrays.asList("W", "WW", "WWW"))
+        );
+        if (correct.contains(false)) {
+            throw new AssertionError();
+        }
+    }
+}
+-----------------------------------------
+Execution Output:
+ 
+--------------JAVA CODE------------------
+import java.util.*;
+import java.lang.*;
+
+class Solution {
+    public int strlen(String string) {
+        return string.length();
+    }
+}
+-----------------------------------------
+--##########---TEST CODE------########----
+import java.util.*;
+import java.lang.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Solution s = new Solution();
+        List<Boolean> correct = Arrays.asList(
+                s.strlen("") == 0,
+                s.strlen("x") == 1,
+                s.strlen("asdasnakj") == 9
+        );
+        if (correct.contains(false)) {
+            throw new AssertionError();
+        }
+    }
+}
+-----------------------------------------
+Execution Output:
+ 
+--------------JAVA CODE------------------
+import java.util.*;
+import java.lang.*;
+
+class Solution {
+    public int fizzBuzz(int n) {
+        List<Integer> ns = new ArrayList<>();
+        for (int i = 0; i < n; i++) {
+            if (i % 11 == 0 || i % 13 == 0) {
+                ns.add(i);
+            }
+        }
+        String s = String.join("", ns.stream().map(String::valueOf).collect(Collectors.toList()));
+        int ans = 0;
+        for (char c : s.toCharArray()) {
+            ans += (c == '7') ? 1 : 0;
+        }
+        return ans;
+    }
+}
+-----------------------------------------
+--##########---TEST CODE------########----
+import java.util.*;
+import java.lang.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Solution s = new Solution();
+        List<Boolean> correct = Arrays.asList(
+                s.fizzBuzz(50) == 0,
+                s.fizzBuzz(78) == 2,
+                s.fizzBuzz(79) == 3,
+                s.fizzBuzz(100) == 3,
+                s.fizzBuzz(200) == 6,
+                s.fizzBuzz(4000) == 192,
+                s.fizzBuzz(10000) == 639,
+                s.fizzBuzz(100000) == 8026
+        );
+        if (correct.contains(false)) {
+            throw new AssertionError();
+        }
+    }
+}
+-----------------------------------------
+Compilation Error:
+ Solution.java:12: error: cannot find symbol
+        String s = String.join("", ns.stream().map(String::valueOf).collect(Collectors.toList()));
+                                                                            ^
+  symbol:   variable Collectors
+  location: class Solution
+1 error
+
+--------------JAVA CODE------------------
+import java.util.*;
+import java.lang.*;
+
+class Solution {
+    public String removeVowels(String text) {
+        return text.replaceAll("[AEIOUaeiou]", "");
+    }
+}
+-----------------------------------------
+--##########---TEST CODE------########----
+import java.util.*;
+import java.lang.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Solution s = new Solution();
+        List<Boolean> correct = Arrays.asList(
+                Objects.equals(s.removeVowels(""), ""),
+                Objects.equals(s.removeVowels("abcdef\nghijklm"), "bcdf\nghjklm"),
+                Objects.equals(s.removeVowels("fedcba"), "fdcb"),
+                Objects.equals(s.removeVowels("eeeee"), ""),
+                Objects.equals(s.removeVowels("acBAA"), "cB"),
+                Objects.equals(s.removeVowels("EcBOO"), "cB"),
+                Objects.equals(s.removeVowels("ybcd"), "ybcd")
+        );
+        if (correct.contains(false)) {
+            throw new AssertionError();
+        }
+    }
+}
+-----------------------------------------
+Execution Output:
+ 
+--------------JAVA CODE------------------
+import java.util.*;
+import java.lang.*;
+
+class Solution {
+    public int largestPrimeFactor(int n) {
+        int largest = 1;
+        for (int j = 2; j <= n; j++) {
+            if (n % j == 0 && isPrime(j)) {
+                largest = Math.max(largest, j);
+            }
+        }
+        return largest;
+    }
+
+    private boolean isPrime(int k) {
+        if (k < 2) {
+            return false;
+        }
+        for (int i = 2; i < k; i++) {
+            if (k % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
+-----------------------------------------
+--##########---TEST CODE------########----
+import java.util.*;
+import java.lang.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Solution s = new Solution();
+        List<Boolean> correct = Arrays.asList(
+                s.largestPrimeFactor(15) == 5,
+                s.largestPrimeFactor(27) == 3,
+                s.largestPrimeFactor(63) == 7,
+                s.largestPrimeFactor(330) == 11,
+                s.largestPrimeFactor(13195) == 29
+        );
+        if (correct.contains(false)) {
+            throw new AssertionError();
+        }
+    }
+}
+-----------------------------------------
+Execution Output:
+ 
+--------------JAVA CODE------------------
+import java.util.*;
+import java.lang.*;
+
+class Solution {
+    public boolean isHappy(String s) {
+        if (s.length() < 3) {
+            return false;
+        }
+
+        for (int i = 0; i < s.length() - 2; i++) {
+            if (s.charAt(i) == s.charAt(i+1) || s.charAt(i+1) == s.charAt(i+2) || s.charAt(i) == s.charAt(i+2)) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
+-----------------------------------------
+--##########---TEST CODE------########----
+import java.util.*;
+import java.lang.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Solution s = new Solution();
+        List<Boolean> correct = Arrays.asList(
+                !s.isHappy("a"),
+                !s.isHappy("aa"),
+                s.isHappy("abcd"),
+                !s.isHappy("aabb"),
+                s.isHappy("adb"),
+                !s.isHappy("xyy"),
+                s.isHappy("iopaxpoi"),
+                !s.isHappy("iopaxioi")
+        );
+        if (correct.contains(false)) {
+            throw new AssertionError();
+        }
+    }
+}
+-----------------------------------------
+Execution Output:
+ 
+--------------JAVA CODE------------------
+None
+-----------------------------------------
+--##########---TEST CODE------########----
+import java.util.*;
+import java.lang.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Solution s = new Solution();
+        List<Boolean> correct = Arrays.asList(
+                s.primeLength("Hello") == true,
+                s.primeLength("abcdcba") == true,
+                s.primeLength("kittens") == true,
+                s.primeLength("orange") == false,
+                s.primeLength("wow") == true,
+                s.primeLength("world") == true,
+                s.primeLength("MadaM") == true,
+                s.primeLength("Wow") == true,
+                s.primeLength("") == false,
+                s.primeLength("HI") == true,
+                s.primeLength("go") == true,
+                s.primeLength("gogo") == false,
+                s.primeLength("aaaaaaaaaaaaaaa") == false,
+                s.primeLength("Madam") == true,
+                s.primeLength("M") == false,
+                s.primeLength("0") == false
+        );
+        if (correct.contains(false)) {
+            throw new AssertionError();
+        }
+    }
+}
+-----------------------------------------
+--------------JAVA CODE------------------
+import java.util.*;
+import java.lang.*;
+
+class Solution {
+    public int startsOneEnds(int n) {
+        if (n == 1) return 1;
+        return 18 * (int)Math.pow(10, n - 2);
+    }
+}
+-----------------------------------------
+--##########---TEST CODE------########----
+import java.util.*;
+import java.lang.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Solution s = new Solution();
+        List<Boolean> correct = Arrays.asList(
+                s.startsOneEnds(1) == 1,
+                s.startsOneEnds(2) == 18,
+                s.startsOneEnds(3) == 180,
+                s.startsOneEnds(4) == 1800,
+                s.startsOneEnds(5) == 18000
+        );
+        if (correct.contains(false)) {
+            throw new AssertionError();
+        }
+    }
+}
+-----------------------------------------
+Execution Output:
+ 
+--------------JAVA CODE------------------
+import java.util.*;
+import java.lang.*;
+
+class Solution {
+    public int add(List<Integer> lst) {
+        int sum = 0;
+        for (int i = 1; i < lst.size(); i += 2) {
+            if (lst.get(i) % 2 == 0) {
+                sum += lst.get(i);
+            }
+        }
+        return sum;
+    }
+}
+-----------------------------------------
+--##########---TEST CODE------########----
+import java.util.*;
+import java.lang.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Solution s = new Solution();
+        List<Boolean> correct = Arrays.asList(
+                s.add(new ArrayList<>(Arrays.asList(4, 88))) == 88,
+                s.add(new ArrayList<>(Arrays.asList(4, 5, 6, 7, 2, 122))) == 122,
+                s.add(new ArrayList<>(Arrays.asList(4, 0, 6, 7))) == 0,
+                s.add(new ArrayList<>(Arrays.asList(4, 4, 6, 8))) == 12
+        );
+        if (correct.contains(false)) {
+            throw new AssertionError();
+        }
+    }
+}
+-----------------------------------------
+Execution Output:
+ 
+--------------JAVA CODE------------------
+import java.util.*;
+import java.lang.*;
+
+class Solution {
+    public Optional<Integer> nextSmallest(List<Integer> lst) {
+        Set<Integer> set = new HashSet<>(lst);
+        List<Integer> sortedList = new ArrayList<>(set);
+        Collections.sort(sortedList);
+
+        if (sortedList.size() < 2) {
+            return Optional.empty();
+        } else {
+            return Optional.of(sortedList.get(1));
+        }
+    }
+}
+-----------------------------------------
+--##########---TEST CODE------########----
+import java.util.*;
+import java.lang.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Solution s = new Solution();
+        List<Boolean> correct = Arrays.asList(
+                s.nextSmallest(new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5))).get() == 2,
+                s.nextSmallest(new ArrayList<>(Arrays.asList(5, 1, 4, 3, 2))).get() == 2,
+                s.nextSmallest(new ArrayList<>(List.of())).isEmpty(),
+                s.nextSmallest(new ArrayList<>(Arrays.asList(1, 1))).isEmpty(),
+                s.nextSmallest(new ArrayList<>(Arrays.asList(1, 1, 1, 1, 0))).get() == 1,
+                s.nextSmallest(new ArrayList<>(Arrays.asList(1, (int) Math.pow(0.0, 0.0)))).isEmpty(),
+                s.nextSmallest(new ArrayList<>(Arrays.asList(-35, 34, 12, -45))).get() == -35
+        );
+        if (correct.contains(false)) {
+            throw new AssertionError();
+        }
+    }
+}
+-----------------------------------------
+Execution Output:
+ 
+--------------JAVA CODE------------------
+import java.util.*;
+import java.lang.*;
+
+class Solution {
+    public boolean checkDictCase(Map<Object, Object> dict) {
+        if (dict.isEmpty()) {
+            return false;
+        } else {
+            String state = "start";
+            for (Map.Entry<Object, Object> entry : dict.entrySet()) {
+                if (!(entry.getKey() instanceof String)) {
+                    state = "mixed";
+                    break;
+                }
+                if (state.equals("start")) {
+                    if (((String)entry.getKey()).matches("^[a-z]*$")) {
+                        state = "lower";
+                    } else if (((String)entry.getKey()).matches("^[A-Z]*$")) {
+                        state = "upper";
+                   } else {
+                        break;
+                    }
+                } else if ((state.equals("upper") && !((String)entry.getKey()).matches("^[A-Z]*$")) || (state.equals("lower") && !((String)entry.getKey()).matches("^[a-z]*$"))) {
+                    state = "mixed";
+                    break;
+                } else {
+                    break;
+                }
+            }
+            return state.equals("upper") || state.equals("lower");
+        }
+    }
+}
+-----------------------------------------
+--##########---TEST CODE------########----
+import java.util.*;
+import java.lang.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Solution s = new Solution();
+        Map<Object, Object> map1 = new HashMap<>();
+        map1.put("p", "pineapple");
+        map1.put("b", "banana");
+        Map<Object, Object> map2 = new HashMap<>();
+        map2.put("p", "pineapple");
+        map2.put("A", "banana");
+        map2.put("B", "banana");
+        Map<Object, Object> map3 = new HashMap<>();
+        map3.put("p", "pineapple");
+        map3.put(5, "banana");
+        map3.put("a", "banana");
+        Map<Object, Object> map4 = new HashMap<>();
+        map4.put("Name", "John");
+        map4.put("Age", "36");
+        map4.put("City", "Houston");
+        Map<Object, Object> map5 = new HashMap<>();
+        map5.put("STATE", "NC");
+        map5.put("ZIP", "12345");
+        Map<Object, Object> map6 = new HashMap<>();
+        map6.put("fruit", "Orange");
+        map6.put("taste", "Sweet");
+        Map<Object, Object> map7 = new HashMap<>();
+        List<Boolean> correct = Arrays.asList(
+                s.checkDictCase(map1),
+                !s.checkDictCase(map2),
+                !s.checkDictCase(map3),
+                !s.checkDictCase(map4),
+                s.checkDictCase(map5),
+                s.checkDictCase(map6),
+                !s.checkDictCase(map7)
+        );
+        if (correct.contains(false)) {
+            throw new AssertionError();
+        }
+    }
+}
+-----------------------------------------
+Execution Error:
+ Exception in thread "main" java.lang.AssertionError
+	at Main.main(Main.java:39)
+
+--------------JAVA CODE------------------
+import java.util.*;
+import java.lang.*;
+
+class Solution {
+    public boolean moveOneBall(List<Integer> arr) {
+        if (arr.size() == 0) {
+            return true;
+        }
+        List<Integer> sortedArray = new ArrayList<>(arr);
+        Collections.sort(sortedArray);
+        List<Integer> myArr = new ArrayList<>();
+        int minValue = Collections.min(arr);
+        int minIndex = arr.indexOf(minValue);
+        myArr.addAll(arr.subList(minIndex, arr.size()));
+        myArr.addAll(arr.subList(0, minIndex));
+        for (int i = 0; i < arr.size(); i++) {
+            if (myArr.get(i) != sortedArray.get(i)) {
+                return false;
+           }
+        return true;
+    }
+}
+-----------------------------------------
+--##########---TEST CODE------########----
+import java.util.*;
+import java.lang.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Solution s = new Solution();
+        List<Boolean> correct = Arrays.asList(
+                s.moveOneBall(new ArrayList<>(Arrays.asList(3, 4, 5, 1, 2))) == true,
+                s.moveOneBall(new ArrayList<>(Arrays.asList(3, 5, 10, 1, 2))) == true,
+                s.moveOneBall(new ArrayList<>(Arrays.asList(4, 3, 1, 2))) == false,
+                s.moveOneBall(new ArrayList<>(Arrays.asList(3, 5, 4, 1, 2))) == false,
+                s.moveOneBall(new ArrayList<>(Arrays.asList())) == true
+        );
+        if (correct.contains(false)) {
+            throw new AssertionError();
+        }
+    }
+}
+-----------------------------------------
+Compilation Error:
+ Solution.java:22: error: reached end of file while parsing
+}
+ ^
+1 error
+
+--------------JAVA CODE------------------
+None
+-----------------------------------------
+--##########---TEST CODE------########----
+import java.util.*;
+import java.lang.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Solution s = new Solution();
+        List<Boolean> correct = Arrays.asList(
+                s.addElements(Arrays.asList(1, -2, -3, 41, 57, 76, 87, 88, 99), 3) == -4,
+                s.addElements(Arrays.asList(111, 121, 3, 4000, 5, 6), 2) == 0,
+                s.addElements(Arrays.asList(11, 21, 3, 90, 5, 6, 7, 8, 9), 4) == 125,
+                s.addElements(Arrays.asList(111, 21, 3, 4000, 5, 6, 7, 8, 9), 4) == 24,
+                s.addElements(Arrays.asList(1), 1) == 1
+        );
+        if (correct.contains(false)) {
+            throw new AssertionError();
+        }
+    }
+}
+-----------------------------------------
+--------------JAVA CODE------------------
+import java.util.*;
+import java.lang.*;
+
+class Solution {
+    public Object splitWords(String txt) {
+        if (txt.contains(" ")) {
+            return Arrays.asList(txt.split(" "));
+        } else if (txt.contains(",")) {
+            return Arrays.asList(txt.replace(",", " ").split(" "));
+        } else {
+            int count = 0;
+            for (char c : txt.toCharArray()) {
+                if (Character.isLowerCase(c) && (c - 'a') % 2 != 0) {
+                    count++;
+                }
+            }
+            return count;
+        }
+    }
+}
+-----------------------------------------
+--##########---TEST CODE------########----
+import java.util.*;
+import java.lang.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Solution s = new Solution();
+        List<Boolean> correct = Arrays.asList(
+                Objects.equals(s.splitWords("Hello world!" ), Arrays.asList("Hello", "world!" )),
+                Objects.equals(s.splitWords("Hello,world!" ), Arrays.asList("Hello", "world!" )),
+                Objects.equals(s.splitWords("Hello world,!" ), Arrays.asList("Hello", "world,!" )),
+                Objects.equals(s.splitWords("Hello,Hello,world !" ), Arrays.asList("Hello,Hello,world", "!" )),
+                Objects.equals(s.splitWords("abcdef" ), 3),
+                Objects.equals(s.splitWords("aaabb" ), 2),
+                Objects.equals(s.splitWords("aaaBb" ), 1),
+                Objects.equals(s.splitWords("" ), 0)
+        );
+        if (correct.contains(false)) {
+            throw new AssertionError();
+        }
+    }
+}
+-----------------------------------------
+Execution Output:
+ 
+--------------JAVA CODE------------------
+None
+-----------------------------------------
+--##########---TEST CODE------########----
+import java.util.*;
+import java.lang.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Solution s = new Solution();
+        List<Boolean> correct = Arrays.asList(
+                s.tri(3).equals(Arrays.asList(1, 3, 2, 8)),
+                s.tri(4).equals(Arrays.asList(1, 3, 2, 8, 3)),
+                s.tri(5).equals(Arrays.asList(1, 3, 2, 8, 3, 15)),
+                s.tri(6).equals(Arrays.asList(1, 3, 2, 8, 3, 15, 4)),
+                s.tri(7).equals(Arrays.asList(1, 3, 2, 8, 3, 15, 4, 24)),
+                s.tri(8).equals(Arrays.asList(1, 3, 2, 8, 3, 15, 4, 24, 5)),
+                s.tri(9).equals(Arrays.asList(1, 3, 2, 8, 3, 15, 4, 24, 5, 35)),
+                s.tri(20).equals(Arrays.asList(1, 3, 2, 8, 3, 15, 4, 24, 5, 35, 6, 48, 7, 63, 8, 80, 9, 99, 10, 120, 11)),
+                s.tri(0).equals(List.of(1)),
+                s.tri(1).equals(Arrays.asList(1, 3))
+        );
+        if (correct.contains(false)) {
+            throw new AssertionError();
+        }
+    }
+}
+-----------------------------------------
+--------------JAVA CODE------------------
+import java.util.*;
+import java.lang.*;
+
+class Solution {
+    public List<Integer> generateIntegers(int a, int b) {
+        List<Integer> result = new ArrayList<>();
+
+        int lower = Math.max(2, Math.min(a, b));
+        int upper = Math.min(8, Math.max(a, b));
+
+        for (int i = lower; i <= upper; i++) {
+            if (i % 2 == 0) {
+                result.add(i);
+            }
+        }
+
+        return result;
+    }
+}
+-----------------------------------------
+--##########---TEST CODE------########----
+import java.util.*;
+import java.lang.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Solution s = new Solution();
+        List<Boolean> correct = Arrays.asList(
+                s.generateIntegers(2, 10).equals(Arrays.asList(2, 4, 6, 8)),
+                s.generateIntegers(10, 2).equals(Arrays.asList(2, 4, 6, 8)),
+                s.generateIntegers(132, 2).equals(Arrays.asList(2, 4, 6, 8)),
+                s.generateIntegers(17, 89).equals(List.of())
+        );
+        if (correct.contains(false)) {
+            throw new AssertionError();
+        }
+    }
+}
+-----------------------------------------
+Execution Output:
